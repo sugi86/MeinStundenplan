@@ -1,0 +1,61 @@
+Semester;Name;Tag;Beginn;Ende;Raum;Dozent;Kürzel
+INI 1;AEN/P/1;Freitag;10:00;13:00;E427;Teich;~Te
+INI 1;AEN/S;Freitag;15:00;15:45;E2;Teich;~Te
+INI 1;AEN/V;Freitag;13:30;15:00;E2;Teich;~Te
+INI 1;EII/B/1;Montag;10:00;11:30;F117;Schneider, A.;Sr
+INI 1;EII/B/2;Montag;11:45;13:15;F106;Schneider, A.;Sr
+INI 1;EII/V;Montag;08:00;09:30;F014;Schneider, A.;Sr
+INI 1;EL1/P/1;Dienstag;08:00;11:00;E336;Hesse, T.;Hes
+INI 1;EL1/S;Mittwoch;11:00;11:45;E007;Hesse, T.;Hes
+INI 1;EL1/V;Mittwoch;09:00;10:30;E2;Hesse, T.;Hes
+INI 1;INF1/P;Dienstag;08:00;11:00;D416;Schenck, W.;Sk
+INI 1;INF1/S;Montag;16:15;17:00;F113;Schenck, W.;Sk
+INI 1;INF1/V;Montag;14:30;16:00;E1;Schenck, W.;Sk
+INI 1;MA1/B/01;Dienstag;15:30;17:00;F108;Ohlhoff, A.;Oh
+INI 1;MA1/B/02;Dienstag;13:45;15:15;F108;Ohlhoff, A.;Oh
+INI 1;MA1/V;Dienstag;11:15;12:45;D011;Ohlhoff, A.;Oh
+INI 1;PH1/P;Dienstag;08:00;11:00;D107,D108;Fromme, L.;Fr
+INI 1;PH1/S;Mittwoch;12:45;13:30;D017;Fromme, L.;Fr
+INI 1;PH1/V;Freitag;08:30;10:00;E4;Fromme, L.;Fr
+INI 3;AT/P;Donnerstag;08:00;11:00;E406;Kohlhase, M.;Kh
+INI 3;AT/S;Donnerstag;13:15;14:00;D2;Kohlhase, M.;Kh
+INI 3;AT/V;Donnerstag;11:30;13:00;D2;Kohlhase, M.;Kh
+INI 3;DIG/P;Montag;10:15;13:15;E336;Hesse, T.;Hes
+INI 3;DIG/S;Dienstag;12:15;13:00;D012;Hesse, T.;Hes
+INI 3;DIG/V;Montag;08:30;10:00;E2;Hesse, T.;Hes
+INI 3;FSE/B/1;Montag;14:30;16:00;D017;Dornseifer-Seitz, A.;Ds
+INI 3;FSE/B/2;Freitag;11:45;13:15;F015;Dornseifer-Seitz, A.;Ds
+INI 3;FSE/B/3;Mittwoch;14:45;16:15;D102;Dornseifer-Seitz, A.;Ds
+INI 3;FSE/B/4;Mittwoch;13:00;14:30;D102;Dornseifer-Seitz, A.;Ds
+INI 3;MA3/S;Mittwoch;11:00;12:30;C1;Ohlhoff, A.;Oh
+INI 3;MA3/V;Mittwoch;09:15;10:45;C1;Ohlhoff, A.;Oh
+INI 3;NW/P;Dienstag;09:00;12:00;D419;Grünwoldt, L.;Gr
+INI 3;NW/S;Dienstag;15:45;16:30;D2;Grünwoldt, L.;Gr
+INI 3;NW/V;Dienstag;14:00;15:30;D2;Grünwoldt, L.;Gr
+INI 3;PR/S/1;Freitag;08:00;09:30;D419;Schneider, A.;Sr
+INI 3;PR/S/2;Freitag;10:00;11:30;D419;Schneider, A.;Sr
+INI 3;PR/S/3;Freitag;11:45;13:15;D419;Schneider, A.;Sr
+INI 3;PR/V;Freitag;08:00;09:30;D017;Schneider, A.;Sr
+INI 5;BS/P/1;Mittwoch;08:00;11:00;D431;Schenck, W.;Sk
+INI 5;BS/S;Montag;17:15;18:00;E007;Schenck, W.;Sk
+INI 5;BS/V;Dienstag;17:30;19:00;E007;Schenck, W.;Sk
+INI 5;GUD/S;Mittwoch;18:45;20:00;E2;Kaimann, A.;Km
+INI 5;GUD/V;Mittwoch;17:30;18:45;E2;Kaimann, A.;Km
+INI 5;HF/P;Dienstag;08:00;11:00;D345;Schultheis, R.;Sl
+INI 5;HF/S;Dienstag;13:00;13:45;D010;Schultheis, R.;Sl
+INI 5;HF/V;Mittwoch;11:15;12:45;E2;Schultheis, R.;Sl
+INI 5;MK1/S1;Montag;13:00;13:45;F219;Manz-Schumacher, H.;Ma
+INI 5;MK1/S2;Montag;14:00;14:45;F219;Manz-Schumacher, H.;Ma
+INI 5;MK1/V;Montag;08:15;11:00;E1;Manz-Schumacher, H.;Ma
+INI 5;NSI/P/01;Mittwoch;14:30;15:15;D431;Fromme, L.;Fr
+INI 5;NSI/S/01;Mittwoch;13:45;14:30;D431;Fromme, L.;Fr
+INI 5;NSI/V/01;Dienstag;11:15;12:45;F106;Schröder, C.;Sö
+INI 5;ROB/S;Donnerstag;12:45;14:15;D011;Hülse, M.;Hül
+INI 5;ROB/V;Donnerstag;08:00;09:30;E4;Hülse, M.;Hül
+INI 5;SIM/P;Dienstag;14:00;17:00;E406;Kohlhase, M.;Kh
+INI 5;SIM/P;Dienstag;14:00;17:00;E406;Koch;~Ko
+INI 5;SIM/S;Mittwoch;17:15;18:00;F113;Kohlhase, M.;Kh
+INI 5;SIM/V;Mittwoch;15:30;17:00;C2;Kohlhase, M.;Kh
+INI 5;SWE/P;Donnerstag;14:15;17:15;F216;Lajios, G.;La
+INI 5;SWE/S;Donnerstag;11:45;12:30;F216,F219;Lajios, G.;La
+INI 5;SWE/V;Donnerstag;10:00;11:30;F219;Lajios, G.;La
