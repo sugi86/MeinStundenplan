@@ -10,7 +10,7 @@
     <string name="write_Backup">Daten im Backup sichern</string>
     <string name="action_settings">Settings</string>
     <string name="Text_Stundenplan_Leer">Hier gibt es noch nichts zu sehen. Weiter gehen.</string>
-    <string name="Text_Test">Test.</string>
+    <string name="Text_Test"></string>
     <string name="Backup">Backup</string>
     <string name="button_input">Fach hinzufügen</string>
 

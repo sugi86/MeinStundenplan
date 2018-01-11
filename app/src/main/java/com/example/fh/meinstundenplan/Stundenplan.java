@@ -153,11 +153,6 @@ public class Stundenplan extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
-            Fragment fragment;
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            fragment = new InputFragment();
-            ft.replace(R.id.container, fragment);
-            ft.commit();
         }
         else
         {
@@ -182,11 +177,6 @@ public class Stundenplan extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
-            Fragment fragment;
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            fragment = new InputFragment();
-            ft.replace(R.id.container, fragment);
-            ft.commit();
         }
 
     }
@@ -238,6 +228,8 @@ public class Stundenplan extends AppCompatActivity
 
         } else if (id == R.id.Sidebar_Neues_Fach) {
             fragment = new InputFragment();
+            ft.replace(R.id.container, fragment);
+            ft.commit();
         } else if (id == R.id.Sidebar_Einlesen) {
             readStundenplan();
 
