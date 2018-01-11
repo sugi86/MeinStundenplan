@@ -134,7 +134,7 @@ public class Fach
     }
 
     public String createTitle(){
-        return semester +" - "+ name + " - " + tag +'\n';
+        return semester +" - "+ name + " - " + tag;
     }
 
     public String createAttribute(){

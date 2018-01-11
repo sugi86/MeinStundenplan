@@ -25,8 +25,8 @@
     <string name="input_kuerzel">Kuerzel</string>
 
 
+    <string name="Titel">Titel</string>
+    <string name="Attribute">Attribute</string>
 
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

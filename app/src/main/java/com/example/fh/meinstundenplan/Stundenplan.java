@@ -124,19 +124,16 @@ public class Stundenplan extends AppCompatActivity
         }
     }
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (Faecher.size() > 0 )
         {
             setContentView(R.layout.activity_stundenplan);
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+            FloatingActionButton fab = findViewById(R.id.fab);
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -145,22 +142,27 @@ public class Stundenplan extends AppCompatActivity
                 }
             });
 
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                     this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             drawer.addDrawerListener(toggle);
             toggle.syncState();
 
-            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            NavigationView navigationView = findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
+            Fragment fragment;
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            fragment = new KatalogFragment();
+            ft.replace(R.id.container, fragment);
+            ft.commit();
         }
         else
         {
             setContentView(R.layout.activity_stundenplan_leer);
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+            FloatingActionButton fab = findViewById(R.id.fab);
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -169,13 +171,13 @@ public class Stundenplan extends AppCompatActivity
                 }
             });
 
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                     this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             drawer.addDrawerListener(toggle);
             toggle.syncState();
 
-            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            NavigationView navigationView = findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
         }
 
@@ -183,7 +185,7 @@ public class Stundenplan extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -219,13 +221,14 @@ public class Stundenplan extends AppCompatActivity
         // Handle navigation view item clicks here.
         Fragment fragment;
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        fragment = new KatalogFragment();
 
         int id = item.getItemId();
 
         if (id == R.id.Sidebar_Stundenplan_anzeigen) {
 
         } else if (id == R.id.Sidebar_Stundenplan_verwalten) {
-
+            fragment = new KatalogFragment();
         } else if (id == R.id.Sidebar_Neues_Fach) {
             fragment = new InputFragment();
             ft.replace(R.id.container, fragment);
@@ -234,10 +237,10 @@ public class Stundenplan extends AppCompatActivity
             readStundenplan();
 
             setContentView(R.layout.activity_stundenplan);
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+            FloatingActionButton fab = findViewById(R.id.fab);
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -246,21 +249,24 @@ public class Stundenplan extends AppCompatActivity
                 }
             });
 
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                     this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             drawer.addDrawerListener(toggle);
             toggle.syncState();
 
-            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            NavigationView navigationView = findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
         } else if (id == R.id.Sidebar_read_Backup){
             readBackup();
         }else if (id == R.id.Sidebar_write_Backup){
             writeBackup();
         }
+        ft.replace(R.id.container, fragment);
+        ft.addToBackStack(null);
+        ft.commit();
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
