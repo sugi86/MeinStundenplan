@@ -68,13 +68,6 @@ public class Stundenplan extends AppCompatActivity
         }
 
     }
-    public void nichts(){
-        int i = 0;
-        while(i==0)
-        {
-            i++;
-        }
-    }
 
     private void writeBackup(){
         try {
@@ -105,7 +98,6 @@ public class Stundenplan extends AppCompatActivity
 
     private void readBackup() {
         SharedPreferences sf = getSharedPreferences("Backup", 0);
-        SharedPreferences.Editor editor = sf.edit();
         Faecher.clear();
         int i = 0;
         String endstring = "Initialized";
@@ -225,11 +217,11 @@ public class Stundenplan extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.Sidebar_Stundenplan_anzeigen) {
-            readBackup();
+
         } else if (id == R.id.Sidebar_Stundenplan_verwalten) {
 
         } else if (id == R.id.Sidebar_Neues_Fach) {
-            writeBackup();
+
         } else if (id == R.id.Sidebar_Einlesen) {
             readStundenplan();
 
@@ -254,6 +246,10 @@ public class Stundenplan extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
+        } else if (id == R.id.Sidebar_read_Backup){
+            readBackup();
+        }else if (id == R.id.Sidebar_write_Backup){
+            writeBackup();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

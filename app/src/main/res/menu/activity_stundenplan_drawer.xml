@@ -22,4 +22,18 @@
             android:title="@string/read" />
     </group>
 
+    <item android:title="@string/Backup">
+            <menu>
+                    <item
+                        android:title="@string/write_Backup"
+                        android:id="@+id/Sidebar_write_Backup"
+                        android:icon="@drawable/ic_menu_slideshow"
+                        />
+                    <item
+                        android:title="@string/read_Backup"
+                        android:id="@+id/Sidebar_read_Backup"
+                        android:icon="@drawable/ic_menu_slideshow"
+                        />
+            </menu>
+    </item>
 </menu>

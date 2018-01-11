@@ -6,7 +6,10 @@
     <string name="manage_stundenplan">Stundenplan verwalten</string>
     <string name="new_fach">Neues Fach anlegen</string>
     <string name="read">CSV einlesen</string>
+    <string name="read_Backup">Daten aus dem Backup einspielen</string>
+    <string name="write_Backup">Daten im Backup sichern</string>
     <string name="action_settings">Settings</string>
-    <string name="Text_Stundenplan_Leer">Noch keine Fächer zum Stundenplan hinzugefügt.</string>
+    <string name="Text_Stundenplan_Leer">Hier gibt es noch nichts zu sehen. Weiter gehen.</string>
     <string name="Text_Test">Test.</string>
+    <string name="Backup">Backup</string>
 </resources>
