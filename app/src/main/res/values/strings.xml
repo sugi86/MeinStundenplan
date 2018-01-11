@@ -12,4 +12,21 @@
     <string name="Text_Stundenplan_Leer">Hier gibt es noch nichts zu sehen. Weiter gehen.</string>
     <string name="Text_Test">Test.</string>
     <string name="Backup">Backup</string>
+    <string name="button_input">Fach hinzufügen</string>
+
+
+    <string name="input_semester">Semester</string>
+    <string name="input_name">Name</string>
+    <string name="input_tag">Tag</string>
+    <string name="input_beginn">Beginn</string>
+    <string name="input_ende">Ende</string>
+    <string name="input_raum">Raum</string>
+    <string name="input_dozent">Dozent</string>
+    <string name="input_kuerzel">Kuerzel</string>
+
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

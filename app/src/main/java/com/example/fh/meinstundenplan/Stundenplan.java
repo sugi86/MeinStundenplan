@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -151,6 +153,11 @@ public class Stundenplan extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
+            Fragment fragment;
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            fragment = new InputFragment();
+            ft.replace(R.id.container, fragment);
+            ft.commit();
         }
         else
         {
@@ -175,7 +182,13 @@ public class Stundenplan extends AppCompatActivity
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
+            Fragment fragment;
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            fragment = new InputFragment();
+            ft.replace(R.id.container, fragment);
+            ft.commit();
         }
+
     }
 
     @Override
@@ -214,6 +227,9 @@ public class Stundenplan extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        Fragment fragment;
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
         int id = item.getItemId();
 
         if (id == R.id.Sidebar_Stundenplan_anzeigen) {
@@ -221,7 +237,7 @@ public class Stundenplan extends AppCompatActivity
         } else if (id == R.id.Sidebar_Stundenplan_verwalten) {
 
         } else if (id == R.id.Sidebar_Neues_Fach) {
-
+            fragment = new InputFragment();
         } else if (id == R.id.Sidebar_Einlesen) {
             readStundenplan();
 
