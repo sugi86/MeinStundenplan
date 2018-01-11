@@ -132,4 +132,12 @@ public class Fach
     public String CSVtoString() {
         return semester +";"+name+";"+tag+";"+beginn+";"+ende+";"+raum+";"+dozent+";"+kuerzel+";"+checked+'\n';
     }
+
+    public String createTitle(){
+        return semester +" - "+ name + " - " + tag +'\n';
+    }
+
+    public String createAttribute(){
+        return raum +'\n' + beginn + " - " + ende + '\n' + dozent;
+    }
 }
