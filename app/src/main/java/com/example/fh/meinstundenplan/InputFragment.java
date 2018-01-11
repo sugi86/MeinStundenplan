@@ -41,15 +41,15 @@ public class InputFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_input, container, false);
 
-        InputSemester = (EditText) view.findViewById(R.id.input_semester);
-        InputName = (EditText) view.findViewById(R.id.input_name);
-        InputTag = (EditText) view.findViewById(R.id.input_tag);
-        InputBeginn = (EditText) view.findViewById(R.id.input_beginn);
-        InputEnde = (EditText) view.findViewById(R.id.input_ende);
-        InputRaum = (EditText) view.findViewById(R.id.input_raum);
-        InputDozent = (EditText) view.findViewById(R.id.input_dozent);
-        InputKuerzel = (EditText) view.findViewById(R.id.input_kuerzel);
-        buttonadd = (Button) view.findViewById(R.id.button_input);
+        InputSemester = view.findViewById(R.id.input_semester);
+        InputName = view.findViewById(R.id.input_name);
+        InputTag = view.findViewById(R.id.input_tag);
+        InputBeginn = view.findViewById(R.id.input_beginn);
+        InputEnde = view.findViewById(R.id.input_ende);
+        InputRaum = view.findViewById(R.id.input_raum);
+        InputDozent = view.findViewById(R.id.input_dozent);
+        InputKuerzel = view.findViewById(R.id.input_kuerzel);
+        buttonadd = view.findViewById(R.id.button_input);
 
         final Stundenplan activity = (Stundenplan) getActivity();
 

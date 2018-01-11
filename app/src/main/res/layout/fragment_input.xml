@@ -14,8 +14,7 @@
         android:layout_marginTop="13dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/input_semester"
-        />
+        android:text="@string/input_semester" />
 
     <EditText
         android:id="@+id/input_name"
@@ -26,8 +25,7 @@
         android:layout_below="@+id/input_semester"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/input_name"
-        />
+        android:text="@string/input_name" />
 
     <EditText
         android:id="@+id/input_tag"
@@ -38,8 +36,7 @@
         android:layout_below="@+id/input_name"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/input_tag"
-        />
+        android:text="@string/input_tag" />
 
     <EditText
         android:id="@+id/input_beginn"
@@ -50,8 +47,7 @@
         android:layout_below="@+id/input_tag"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/input_beginn"
-        />
+        android:text="@string/input_beginn" />
 
     <EditText
         android:id="@+id/input_ende"
@@ -62,8 +58,7 @@
         android:layout_below="@+id/input_beginn"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/input_ende"
-        />
+        android:text="@string/input_ende" />
 
     <EditText
         android:id="@+id/input_raum"
@@ -74,8 +69,7 @@
         android:layout_below="@+id/input_ende"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/input_raum"
-        />
+        android:text="@string/input_raum" />
 
     <EditText
         android:id="@+id/input_dozent"
@@ -86,8 +80,7 @@
         android:layout_below="@+id/input_raum"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/input_dozent"
-        />
+        android:text="@string/input_dozent" />
 
     <EditText
         android:id="@+id/input_kuerzel"
@@ -98,8 +91,7 @@
         android:layout_below="@+id/input_dozent"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/input_kuerzel"
-        />
+        android:text="@string/input_kuerzel" />
 
     <Button
         android:id="@+id/button_input"
