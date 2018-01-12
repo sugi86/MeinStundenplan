@@ -253,15 +253,11 @@ public class Stundenplan extends AppCompatActivity
             fragment = new KatalogFragment();
         } else if (id == R.id.Sidebar_Neues_Fach) {
             fragment = new InputFragment();
-            ft.replace(R.id.container, fragment);
-            ft.commit();
         } else if (id == R.id.Sidebar_Einlesen) {
             readStundenplan();
-
             setContentView(R.layout.activity_stundenplan);
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
-
             FloatingActionButton fab = findViewById(R.id.fab);
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -270,13 +266,11 @@ public class Stundenplan extends AppCompatActivity
                             .setAction("Action", null).show();
                 }
             });
-
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                     this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             drawer.addDrawerListener(toggle);
             toggle.syncState();
-
             NavigationView navigationView = findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
         } else if (id == R.id.Sidebar_read_Backup){

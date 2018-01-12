@@ -60,7 +60,6 @@ public class InputFragment extends Fragment {
                         (InputSemester.getText().toString(),InputName.getText().toString(),InputTag.getText().toString(),
                                 InputBeginn.getText().toString(), InputEnde.getText().toString(), InputRaum.getText().toString(),
                                 InputDozent.getText().toString(), InputKuerzel.getText().toString(), true);
-
                 InputSemester.setText("Semester");
                 InputName.setText("Name");
                 InputTag.setText("Tag");
@@ -72,14 +71,10 @@ public class InputFragment extends Fragment {
                 InputSemester.requestFocus();
                 InputMethodManager mgr = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
                 mgr.hideSoftInputFromWindow(InputSemester.getWindowToken(),0);
-
-
-
                 Snackbar.make(v, "Fach erfolgreich zum Katalog hinzugefügt", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
-
         // Inflate the layout for this fragment
         return view;
     }
