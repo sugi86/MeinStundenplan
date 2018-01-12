@@ -40,13 +40,20 @@ import java.util.ArrayList;
 
 public class Stundenplan extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    public ArrayList<Fach> Faecher = new ArrayList<Fach>();
+    public ArrayList<Fach> Katalog = new ArrayList<>();
+    public ArrayList<Fach> Montag = new ArrayList<>();
+    public ArrayList<Fach> Dienstag = new ArrayList<>();
+    public ArrayList<Fach> Mittwoch = new ArrayList<>();
+    public ArrayList<Fach> Donnerstag = new ArrayList<>();
+    public ArrayList<Fach> Freitag = new ArrayList<>();
 
     public void addFach(String s, String n, String t, String b, String e, String r, String d, String k, boolean ak)
     {
         Fach tmpfach = new Fach(s, n, t, b, e, r, d, k, ak);
-        Faecher.add(tmpfach);
+        Katalog.add(tmpfach);
     }
+
+
 
 
     private void readStundenplan() {
@@ -65,7 +72,7 @@ public class Stundenplan extends AppCompatActivity
 
                 //Read the data
                 addFach(tokens[0], tokens[1],tokens[2],tokens[3],tokens[4],tokens[5],tokens[6],tokens[7], false);
-                Log.d("ReadStundenplan", "Just created: " + Faecher.get(Faecher.size() - 1));
+                Log.d("ReadStundenplan", "Just created: " + Katalog.get(Katalog.size() - 1));
 
                 //
             }
@@ -90,9 +97,9 @@ public class Stundenplan extends AppCompatActivity
             SharedPreferences sf = getPreferences(0);
             SharedPreferences.Editor editor = sf.edit();
             String tmpstring;
-            for (int i = 0; i < Faecher.size(); i++) {
+            for (int i = 0; i < Katalog.size(); i++) {
                 tmpstring = Integer.toString(i);
-                editor.putString(tmpstring,Faecher.get(i).CSVtoString());
+                editor.putString(tmpstring,Katalog.get(i).CSVtoString());
                 editor.commit();
                 Log.d("writeSharedPref",  sf.getString(tmpstring,"Keiner!"));
             }
@@ -106,7 +113,7 @@ public class Stundenplan extends AppCompatActivity
 
     private void readBackup() {
         SharedPreferences sf = getSharedPreferences("Backup", 0);
-        Faecher.clear();
+        Katalog.clear();
         int i = 0;
         String endstring = "Initialized";
         boolean check;
@@ -123,9 +130,43 @@ public class Stundenplan extends AppCompatActivity
                 String[] tokens = endstring.split(";");
                 check = Boolean.valueOf(tokens[8]);
                 addFach(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], tokens[6], tokens[7], check);
-                Log.d("ReadSharedPref", "Just created: " + Faecher.get(Faecher.size() - 1));
+                Log.d("ReadSharedPref", "Just created: " + Katalog.get(Katalog.size() - 1));
                 i++;
                 Log.d("In While Schleife", "Zählvariable " + i);
+            }
+        }
+    }
+
+    private void createStundenplan()
+    {
+        String cmp;
+        Montag.clear();
+        Dienstag.clear();
+        Mittwoch.clear();
+        Donnerstag.clear();
+        Freitag.clear();
+        for (int i = 0; i<Katalog.size();i++)
+        {
+            cmp = Katalog.get(i).getTag();
+            if (cmp.equals("Montag"))
+            {
+                Montag.add(Katalog.get(i));
+            }
+            else if (cmp.equals("Dienstag"))
+            {
+                Dienstag.add(Katalog.get(i));
+            }
+            else if (cmp.equals("Mittwoch"))
+            {
+                Mittwoch.add(Katalog.get(i));
+            }
+            else if (cmp.equals("Donnerstag"))
+            {
+                Donnerstag.add(Katalog.get(i));
+            }
+            else if (cmp.equals("Freitag"))
+            {
+                Freitag.add(Katalog.get(i));
             }
         }
     }
@@ -134,8 +175,6 @@ public class Stundenplan extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Faecher.size() > 0 )
-        {
             setContentView(R.layout.activity_stundenplan);
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
@@ -162,32 +201,6 @@ public class Stundenplan extends AppCompatActivity
             fragment = new KatalogFragment();
             ft.replace(R.id.container, fragment);
             ft.commit();
-        }
-        else
-        {
-            setContentView(R.layout.activity_stundenplan_leer);
-            Toolbar toolbar = findViewById(R.id.toolbar);
-            setSupportActionBar(toolbar);
-
-            FloatingActionButton fab = findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
-
-            DrawerLayout drawer = findViewById(R.id.drawer_layout);
-            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-            drawer.addDrawerListener(toggle);
-            toggle.syncState();
-
-            NavigationView navigationView = findViewById(R.id.nav_view);
-            navigationView.setNavigationItemSelectedListener(this);
-        }
-
     }
 
     @Override
