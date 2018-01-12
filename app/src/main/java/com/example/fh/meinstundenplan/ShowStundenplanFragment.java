@@ -31,11 +31,11 @@ public class ShowStundenplanFragment extends Fragment {
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
 
 
-        tabLayout.addTab(tabLayout.newTab().setText("MO"));
-        tabLayout.addTab(tabLayout.newTab().setText("DI"));
-        tabLayout.addTab(tabLayout.newTab().setText("MI"));
-        tabLayout.addTab(tabLayout.newTab().setText("DO"));
-        tabLayout.addTab(tabLayout.newTab().setText("FR"));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.Monday));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.Tuesday));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.Wednesday));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.Thursday));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.Friday));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager pager = (ViewPager) view.findViewById(R.id.pager);
