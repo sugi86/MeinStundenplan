@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -20,6 +23,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TabHost;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -42,6 +47,7 @@ public class Stundenplan extends AppCompatActivity
         Fach tmpfach = new Fach(s, n, t, b, e, r, d, k, ak);
         Faecher.add(tmpfach);
     }
+
 
     private void readStundenplan() {
         InputStream is = getResources().openRawResource(R.raw.ini_ws17);
@@ -123,6 +129,7 @@ public class Stundenplan extends AppCompatActivity
             }
         }
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -226,6 +233,7 @@ public class Stundenplan extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.Sidebar_Stundenplan_anzeigen) {
+            fragment = new ShowStundenplanFragment();
 
         } else if (id == R.id.Sidebar_Stundenplan_verwalten) {
             fragment = new KatalogFragment();
@@ -270,5 +278,6 @@ public class Stundenplan extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }
-//Test
