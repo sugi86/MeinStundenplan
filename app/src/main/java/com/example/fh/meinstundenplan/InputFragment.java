@@ -9,9 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 
 /**
@@ -23,12 +27,13 @@ public class InputFragment extends Fragment {
 
     private EditText InputSemester;
     private EditText InputName;
-    private EditText InputTag;
+    private Spinner InputTag;
     private EditText InputBeginn;
     private EditText InputEnde;
     private EditText InputRaum;
     private EditText InputDozent;
     private EditText InputKuerzel;
+    EditText tmp;
 
 
     public InputFragment() {
@@ -53,16 +58,35 @@ public class InputFragment extends Fragment {
 
         final Stundenplan activity = (Stundenplan) getActivity();
 
+        InputTag.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+
+        /*ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(activity,
+                R.array.tage_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        InputTag.setAdapter(adapter);
+
+            InputTag.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                tmp.setText(parent.getItemAtPosition(position).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        */
+
         buttonadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 activity.addFach
-                        (InputSemester.getText().toString(),InputName.getText().toString(),InputTag.getText().toString(),
+                        (InputSemester.getText().toString(),InputName.getText().toString(),String.valueOf(InputTag.getSelectedItem()).toString(),
                                 InputBeginn.getText().toString(), InputEnde.getText().toString(), InputRaum.getText().toString(),
                                 InputDozent.getText().toString(), InputKuerzel.getText().toString(), true);
                 InputSemester.setText("Semester");
                 InputName.setText("Name");
-                InputTag.setText("Tag");
                 InputBeginn.setText("Beginn");
                 InputEnde.setText("Ende");
                 InputRaum.setText("Raum");
