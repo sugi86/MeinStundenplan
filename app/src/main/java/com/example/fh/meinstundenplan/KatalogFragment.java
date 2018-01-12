@@ -31,7 +31,7 @@ public class KatalogFragment extends Fragment {
         list = (ListView) view.findViewById(R.id.listView_list);
         final Stundenplan activity = (Stundenplan) getActivity();
 
-        final UsersAdapter usersAdapter = new UsersAdapter (activity, activity.Faecher);
+        final UsersAdapter usersAdapter = new UsersAdapter (activity, activity.Katalog);
         list.setAdapter(usersAdapter);
 
         // Inflate the layout for this fragment

@@ -5,12 +5,9 @@
     android:orientation="vertical"
     tools:context="com.example.fh.meinstundenplan.FragmentTuesday">
 
-    <TextView
+    <ListView
+        android:id="@+id/listView_tuesday"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:text="@string/fragmentTuesday"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
-
+        android:layout_height="match_parent" />
 
 </FrameLayout>

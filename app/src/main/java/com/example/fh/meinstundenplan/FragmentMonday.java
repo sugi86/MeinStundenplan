@@ -6,10 +6,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 public class FragmentMonday extends Fragment {
 
-
+    ListView list;
 
     public FragmentMonday() {
         // Required empty public constructor
@@ -18,6 +19,14 @@ public class FragmentMonday extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_monday, container, false);
+        View view =  inflater.inflate(R.layout.fragment_monday, container, false);
+
+        list = (ListView) view.findViewById(R.id.listView_monday);
+
+        final Stundenplan activity =(Stundenplan) getActivity();
+        final UsersAdapter usersAdapter = new UsersAdapter(activity, activity.Montag);
+        list.setAdapter(usersAdapter);
+
+        return view;
     }
 }

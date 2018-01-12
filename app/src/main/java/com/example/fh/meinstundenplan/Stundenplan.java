@@ -246,6 +246,7 @@ public class Stundenplan extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.Sidebar_Stundenplan_anzeigen) {
+            createStundenplan();
             fragment = new ShowStundenplanFragment();
 
         } else if (id == R.id.Sidebar_Stundenplan_verwalten) {
