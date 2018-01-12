@@ -97,6 +97,7 @@ public class Stundenplan extends AppCompatActivity
             SharedPreferences sf = getPreferences(0);
             SharedPreferences.Editor editor = sf.edit();
             String tmpstring;
+            editor.clear();
             for (int i = 0; i < Katalog.size(); i++) {
                 tmpstring = Integer.toString(i);
                 editor.putString(tmpstring,Katalog.get(i).CSVtoString());

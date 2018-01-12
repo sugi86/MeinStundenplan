@@ -137,6 +137,10 @@ public class Fach
         return semester +" - "+ name + " - " + tag;
     }
 
+    public String createTitle_ohne_Tag(){
+        return semester +" - "+ name;
+    }
+
     public String createAttribute(){
         return raum +'\n' + beginn + " - " + ende + '\n' + dozent;
     }

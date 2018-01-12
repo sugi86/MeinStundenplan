@@ -25,7 +25,7 @@ public class FragmentTuesday extends Fragment {
         list = (ListView) view.findViewById(R.id.listView_tuesday);
 
         final Stundenplan activity =(Stundenplan) getActivity();
-        final UsersAdapter usersAdapter = new UsersAdapter(activity, activity.Dienstag);
+        final UsersAdapter_Tage usersAdapter = new UsersAdapter_Tage(activity, activity.Dienstag);
         list.setAdapter(usersAdapter);
 
         return view;
