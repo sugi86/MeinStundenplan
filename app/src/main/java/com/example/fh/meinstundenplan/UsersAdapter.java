@@ -23,7 +23,7 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        Fach fach = getItem(position);
+        final Fach fach = getItem(position);
         Boolean tmp;
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
@@ -31,7 +31,7 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
         }
         // Lookup view for data population
         TextView titel = (TextView) convertView.findViewById(R.id.Fach_Titel);
-        final CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.checkBox);
+        CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.checkBox);
         // Populate the data into the template view using the data object
         titel.setText(fach.createTitle());
         checkBox.setChecked(fach.isChecked());
@@ -40,7 +40,7 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
-
+                    fach.setChecked(true);
                 }
             }
         });
