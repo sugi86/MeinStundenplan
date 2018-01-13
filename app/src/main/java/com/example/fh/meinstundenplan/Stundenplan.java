@@ -109,13 +109,6 @@ public class Stundenplan extends AppCompatActivity
 
             SharedPreferences sf = getSharedPreferences("Backup", 0);
             SharedPreferences.Editor editor = sf.edit();
-            /*Map<String,?> keys = sf.getAll();
-            for(Map.Entry<String,?> entry: keys.entrySet())
-            {
-                editor.remove(entry.getKey());
-                editor.commit();
-            }
-            */
             editor.clear();
             editor.commit();
             String tmpstring;
