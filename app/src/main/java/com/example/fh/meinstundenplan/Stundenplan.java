@@ -109,8 +109,10 @@ public class Stundenplan extends AppCompatActivity
 
             SharedPreferences sf = getSharedPreferences("Backup", 0);
             SharedPreferences.Editor editor = sf.edit();
+            Map<String,?> keys = sf.getAll();
             editor.clear();
             editor.commit();
+
             String tmpstring;
 
             for (int i = 0; i < Katalog.size(); i++) {
@@ -129,6 +131,7 @@ public class Stundenplan extends AppCompatActivity
 
     private void readBackup() {
         String tmpstring;
+        String bool;
         boolean check;
         Katalog.clear();
         SharedPreferences sf = getSharedPreferences("Backup", 0);
@@ -141,7 +144,15 @@ public class Stundenplan extends AppCompatActivity
 
             Log.d("map values",entry.getKey() + ": " +
                     entry.getValue().toString());
-            check = Boolean.valueOf(tokens[8]);
+            if (tokens[8].equals("true"))
+            {
+                check = true;
+            }
+            else
+            {
+                check = false;
+            }
+            Log.d("Check :" + check, "token 7: " + tokens[8]);
             addFach(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], tokens[6], tokens[7], check);
         }
     }

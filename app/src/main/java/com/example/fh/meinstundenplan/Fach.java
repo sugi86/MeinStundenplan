@@ -130,7 +130,7 @@ public class Fach
     }
 
     public String CSVtoString() {
-        return semester +";"+name+";"+tag+";"+beginn+";"+ende+";"+raum+";"+dozent+";"+kuerzel+";"+checked+'\n';
+        return semester +";"+name+";"+tag+";"+beginn+";"+ende+";"+raum+";"+dozent+";"+kuerzel+";"+checked;
     }
 
     public String createTitle(){
