@@ -29,11 +29,10 @@
                         android:id="@+id/Sidebar_write_Backup"
                         android:icon="@drawable/ic_menu_slideshow"
                         />
-                    <item
-                        android:title="@string/read_Backup"
-                        android:id="@+id/Sidebar_read_Backup"
-                        android:icon="@drawable/ic_menu_slideshow"
-                        />
+                <item
+                    android:id="@+id/Sidebar_read_Backup"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="@string/Clear_all" />
             </menu>
     </item>
 </menu>

@@ -13,6 +13,7 @@
     <string name="Text_Test"></string>
     <string name="Backup">Backup</string>
     <string name="button_input">Fach hinzufügen</string>
+    <string name="Clear_all">Katalog zurücksetzen</string>
 
 
     <string name="input_semester">Semester</string>

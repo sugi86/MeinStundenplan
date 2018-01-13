@@ -56,11 +56,20 @@ public class Stundenplan extends AppCompatActivity
         Katalog.add(tmpfach);
     }
 
-    public void sortTage(ArrayList<Fach> tmp){
+    public void sortTage_Beginn(ArrayList<Fach> tmp){
         Collections.sort(tmp, new Comparator<Fach>() {
             @Override
             public int compare(Fach o2, Fach o1) {
                 return (o1.getBeginn().compareTo(o2.getBeginn()))*-1;
+            }
+        });
+    }
+
+    public void sortTage_Tage(ArrayList<Fach> tmp){
+        Collections.sort(tmp, new Comparator<Fach>() {
+            @Override
+            public int compare(Fach o2, Fach o1) {
+                return (o1.getTag().compareTo(o2.getTag()));
             }
         });
     }
@@ -189,18 +198,17 @@ public class Stundenplan extends AppCompatActivity
                 Freitag.add(Katalog.get(i));
             }
         }
-        sortTage(Montag);
-        sortTage(Dienstag);
-        sortTage(Mittwoch);
-        sortTage(Donnerstag);
-        sortTage(Freitag);
+        sortTage_Beginn(Montag);
+        sortTage_Beginn(Dienstag);
+        sortTage_Beginn(Mittwoch);
+        sortTage_Beginn(Donnerstag);
+        sortTage_Beginn(Freitag);
     }
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+            readBackup();
             setContentView(R.layout.activity_stundenplan);
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
@@ -276,11 +284,15 @@ public class Stundenplan extends AppCompatActivity
             fragment = new ShowStundenplanFragment();
 
         } else if (id == R.id.Sidebar_Stundenplan_verwalten) {
+            sortTage_Beginn(Katalog);
+            sortTage_Tage(Katalog);
             fragment = new KatalogFragment();
         } else if (id == R.id.Sidebar_Neues_Fach) {
             fragment = new InputFragment();
         } else if (id == R.id.Sidebar_Einlesen) {
             readStundenplan();
+            sortTage_Beginn(Katalog);
+            sortTage_Tage(Katalog);
             setContentView(R.layout.activity_stundenplan);
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
@@ -300,7 +312,7 @@ public class Stundenplan extends AppCompatActivity
             NavigationView navigationView = findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
         } else if (id == R.id.Sidebar_read_Backup){
-            readBackup();
+            Katalog.clear();
         }else if (id == R.id.Sidebar_write_Backup){
             writeBackup();
         }
