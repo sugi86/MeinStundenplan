@@ -37,6 +37,8 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Map;
 
 public class Stundenplan extends AppCompatActivity
@@ -52,6 +54,15 @@ public class Stundenplan extends AppCompatActivity
     {
         Fach tmpfach = new Fach(s, n, t, b, e, r, d, k, ak);
         Katalog.add(tmpfach);
+    }
+
+    public void sortTage(ArrayList<Fach> tmp){
+        Collections.sort(tmp, new Comparator<Fach>() {
+            @Override
+            public int compare(Fach o2, Fach o1) {
+                return (o1.getBeginn().compareTo(o2.getBeginn()))*-1;
+            }
+        });
     }
 
 
@@ -200,7 +211,13 @@ public class Stundenplan extends AppCompatActivity
                 Freitag.add(Katalog.get(i));
             }
         }
+        sortTage(Montag);
+        sortTage(Dienstag);
+        sortTage(Mittwoch);
+        sortTage(Donnerstag);
+        sortTage(Freitag);
     }
+
 
 
     @Override
