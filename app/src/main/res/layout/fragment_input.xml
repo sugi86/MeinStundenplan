@@ -7,97 +7,96 @@
     <EditText
         android:id="@+id/input_semester"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="13dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
         android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
         android:inputType="textPersonName"
-        android:text="@string/input_semester" />
+        android:hint="@string/input_semester"/>
 
     <EditText
         android:id="@+id/input_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/input_semester"
-        android:layout_alignRight="@+id/input_semester"
+        android:layout_height="50dp"
         android:layout_below="@+id/input_semester"
+        android:layout_centerHorizontal="true"
         android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
         android:inputType="textPersonName"
-        android:text="@string/input_name" />
+        android:hint="@string/input_name" />
 
     <Spinner
         android:id="@+id/input_tag"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_height="50dp"
+        android:layout_alignRight="@id/input_name"
         android:layout_below="@+id/input_name"
         android:ems="10"
         android:entries="@array/tage_array"
-        />
+        android:gravity="center_vertical|center_horizontal|center"
+        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/input_beginn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/input_tag"
-        android:layout_alignRight="@+id/input_tag"
+        android:layout_height="50dp"
         android:layout_below="@+id/input_tag"
+        android:layout_centerHorizontal="true"
         android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
         android:inputType="textPersonName"
-        android:text="@string/input_beginn" />
+        android:hint="@string/input_beginn" />
 
     <EditText
         android:id="@+id/input_ende"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_height="50dp"
         android:layout_below="@+id/input_beginn"
+        android:layout_centerHorizontal="true"
         android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
         android:inputType="textPersonName"
-        android:text="@string/input_ende" />
+        android:hint="@string/input_ende" />
 
     <EditText
         android:id="@+id/input_raum"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/input_ende"
-        android:layout_alignRight="@+id/input_ende"
+        android:layout_height="50dp"
         android:layout_below="@+id/input_ende"
+        android:layout_centerHorizontal="true"
         android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
         android:inputType="textPersonName"
-        android:text="@string/input_raum" />
+        android:hint="@string/input_raum" />
 
     <EditText
         android:id="@+id/input_dozent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_height="50dp"
         android:layout_below="@+id/input_raum"
+        android:layout_centerHorizontal="true"
         android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
         android:inputType="textPersonName"
-        android:text="@string/input_dozent" />
+        android:hint="@string/input_dozent" />
 
     <EditText
         android:id="@+id/input_kuerzel"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_height="50dp"
         android:layout_below="@+id/input_dozent"
+        android:layout_centerHorizontal="true"
         android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
         android:inputType="textPersonName"
-        android:text="@string/input_kuerzel" />
+        android:hint="@string/input_kuerzel" />
 
     <Button
         android:id="@+id/button_input"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/button_input" />
+        android:hint="@string/button_input" />
 </RelativeLayout>
