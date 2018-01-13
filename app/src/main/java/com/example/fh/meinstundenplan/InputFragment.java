@@ -85,13 +85,15 @@ public class InputFragment extends Fragment {
                         (InputSemester.getText().toString(),InputName.getText().toString(),tag,
                                 InputBeginn.getText().toString(), InputEnde.getText().toString(), InputRaum.getText().toString(),
                                 InputDozent.getText().toString(), InputKuerzel.getText().toString(), true, id);
-                InputSemester.setText(R.string.input_semester);
-                InputName.setText(R.string.input_name);
-                InputBeginn.setText(R.string.input_beginn);
-                InputEnde.setText(R.string.input_ende);
-                InputRaum.setText(R.string.input_raum);
-                InputDozent.setText(R.string.input_dozent);
-                InputKuerzel.setText(R.string.input_kuerzel);
+                InputSemester.setText(null);
+                InputName.setText(null);
+                InputBeginn.setText(null);
+                InputEnde.setText(null);
+                InputRaum.setText(null);
+                InputDozent.setText(null);
+                InputKuerzel.setText(null);
+
+
                 InputSemester.requestFocus();
                 InputMethodManager mgr = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
                 mgr.hideSoftInputFromWindow(InputSemester.getWindowToken(),0);

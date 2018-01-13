@@ -121,12 +121,9 @@ public class Stundenplan extends AppCompatActivity
                 {
                     id = "5";
                 }
-
-
                 //Read the data
                 addFach(tokens[0], tokens[1],tokens[2],tokens[3],tokens[4],tokens[5],tokens[6],tokens[7], false, id);
                 Log.d("ReadStundenplan", "Just created: " + Katalog.get(Katalog.size() - 1));
-
                 //
             }
         }
@@ -262,7 +259,8 @@ public class Stundenplan extends AppCompatActivity
             navigationView.setNavigationItemSelectedListener(this);
             Fragment fragment;
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            fragment = new KatalogFragment();
+            createStundenplan();
+            fragment = new ShowStundenplanFragment();
             ft.replace(R.id.container, fragment);
             ft.commit();
     }
@@ -300,14 +298,13 @@ public class Stundenplan extends AppCompatActivity
         // Handle navigation view item clicks here.
         Fragment fragment;
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        fragment = new KatalogFragment();
 
+        fragment = new KatalogFragment();
         int id = item.getItemId();
 
         if (id == R.id.Sidebar_Stundenplan_anzeigen) {
             createStundenplan();
             fragment = new ShowStundenplanFragment();
-
         } else if (id == R.id.Sidebar_Stundenplan_verwalten) {
             sortTage_Semester(Katalog);
             sortTage_Beginn(Katalog);
@@ -329,6 +326,9 @@ public class Stundenplan extends AppCompatActivity
             toggle.syncState();
             NavigationView navigationView = findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
+            Snackbar.make(navigationView, "Katalog erfolgreich aus CSV-Datei importiert", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+
         } else if (id == R.id.Sidebar_read_Backup){
             Katalog.clear();
         }else if (id == R.id.Sidebar_write_Backup){

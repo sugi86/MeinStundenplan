@@ -2,6 +2,7 @@ package com.example.fh.meinstundenplan;
 
 import android.content.Context;
 
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,7 +50,7 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 int position =(Integer) buttonView.getTag();
                 Fach fach = getItem(position);
-                if (isChecked){
+                if (isChecked) {
                     fach.setChecked(true);
                 }
                 else{
@@ -57,8 +58,6 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
                 }
             }
         });
-
-
         // Return the completed view to render on screen
         return convertView;
     }
