@@ -3,12 +3,13 @@ package com.example.fh.meinstundenplan;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-public class FragmentTuesday extends Fragment {
+public class FragmentTuesday extends ShowStundenplanFragment {
 
 
     ListView list;
@@ -20,9 +21,9 @@ public class FragmentTuesday extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_tuesday, container, false);
+        View view =  inflater.inflate(R.layout.fragment_day, container, false);
 
-        list = (ListView) view.findViewById(R.id.listView_tuesday);
+        list = (ListView) view.findViewById(R.id.listView_day);
 
         final Stundenplan activity =(Stundenplan) getActivity();
         final UsersAdapter_Tage usersAdapter = new UsersAdapter_Tage(activity, activity.Dienstag);

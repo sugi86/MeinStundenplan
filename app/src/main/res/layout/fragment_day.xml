@@ -2,13 +2,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/day_top_spacing"
     android:orientation="vertical"
-tools:context="com.example.fh.meinstundenplan.FragmentThursday">
+    tools:context="com.example.fh.meinstundenplan.FragmentMonday">
 
     <ListView
-        android:id="@+id/listView_thursday"
+        android:id="@+id/listView_day"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/day_top_spacing" />
 
 </FrameLayout>
+

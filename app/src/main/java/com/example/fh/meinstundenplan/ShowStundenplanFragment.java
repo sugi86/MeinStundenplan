@@ -47,7 +47,7 @@ public class ShowStundenplanFragment extends Fragment {
 
         pager.setAdapter(adapter);
         pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 pager.setCurrentItem(tab.getPosition());
@@ -63,7 +63,6 @@ public class ShowStundenplanFragment extends Fragment {
 
             }
         });
-
         return view;
     }
 }
