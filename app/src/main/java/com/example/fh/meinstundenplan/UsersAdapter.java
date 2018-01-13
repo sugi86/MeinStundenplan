@@ -1,6 +1,8 @@
 package com.example.fh.meinstundenplan;
 
 import android.content.Context;
+
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,15 +25,20 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        final Fach fach = getItem(position);
+
+        Fach fach = getItem(position);
+
         Boolean tmp;
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
+
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_fach_katalog, parent, false);
         }
         // Lookup view for data population
         TextView titel = (TextView) convertView.findViewById(R.id.Fach_Titel);
         CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.checkBox);
+
+        checkBox.setTag(position);
         // Populate the data into the template view using the data object
         titel.setText(fach.createTitle());
         checkBox.setChecked(fach.isChecked());
@@ -40,8 +47,13 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                int position =(Integer) buttonView.getTag();
+                Fach fach = getItem(position);
                 if (isChecked){
                     fach.setChecked(true);
+                }
+                else{
+                    fach.setChecked(false);
                 }
             }
         });

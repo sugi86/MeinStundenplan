@@ -144,32 +144,6 @@ public class Stundenplan extends AppCompatActivity
             check = Boolean.valueOf(tokens[8]);
             addFach(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], tokens[6], tokens[7], check);
         }
-
-
-        /*
-        Katalog.clear();
-        int i = 0;
-        String endstring = "Initialized";
-        boolean check;
-        Log.d("Vor While Schleife", "Test: " + endstring);
-        while (true)
-        {
-            endstring = sf.getString(Integer.toString(i), "Keiner!");
-            if (endstring.equals("Keiner!"))
-            {
-                Log.d("Abbruchbedingung", "Endstring: " + endstring);
-                break;
-            }
-            else {
-                String[] tokens = endstring.split(";");
-                check = Boolean.valueOf(tokens[8]);
-                addFach(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], tokens[6], tokens[7], check);
-                Log.d("ReadSharedPref", "Just created: " + Katalog.get(Katalog.size() - 1));
-                i++;
-                Log.d("In While Schleife", "Zählvariable " + i);
-            }
-        }
-        */
     }
 
     private void createStundenplan()
@@ -183,23 +157,23 @@ public class Stundenplan extends AppCompatActivity
         for (int i = 0; i<Katalog.size();i++)
         {
             cmp = Katalog.get(i).getTag();
-            if (cmp.equals("Montag"))
+            if (cmp.equals("Montag") && Katalog.get(i).isChecked())
             {
                 Montag.add(Katalog.get(i));
             }
-            else if (cmp.equals("Dienstag"))
+            else if (cmp.equals("Dienstag") && Katalog.get(i).isChecked())
             {
                 Dienstag.add(Katalog.get(i));
             }
-            else if (cmp.equals("Mittwoch"))
+            else if (cmp.equals("Mittwoch") && Katalog.get(i).isChecked())
             {
                 Mittwoch.add(Katalog.get(i));
             }
-            else if (cmp.equals("Donnerstag"))
+            else if (cmp.equals("Donnerstag") && Katalog.get(i).isChecked())
             {
                 Donnerstag.add(Katalog.get(i));
             }
-            else if (cmp.equals("Freitag"))
+            else if (cmp.equals("Freitag") && Katalog.get(i).isChecked())
             {
                 Freitag.add(Katalog.get(i));
             }

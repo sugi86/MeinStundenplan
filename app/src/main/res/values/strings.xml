@@ -3,10 +3,10 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="show_stundenplan">Stundenplan anzeigen</string>
-    <string name="manage_stundenplan">Stundenplan verwalten</string>
+    <string name="manage_stundenplan">Katalog anzeigen</string>
     <string name="new_fach">Neues Fach anlegen</string>
     <string name="read">CSV einlesen</string>
-    <string name="read_Backup">Daten aus dem Backup einspielen</string>
+    <string name="read_Backup">Backup einlesen</string>
     <string name="write_Backup">Daten im Backup sichern</string>
     <string name="action_settings">Settings</string>
     <string name="Text_Stundenplan_Leer">Hier gibt es noch nichts zu sehen. Weiter gehen.</string>

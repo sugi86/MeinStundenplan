@@ -32,9 +32,10 @@
         android:layout_height="50dp"
         android:layout_alignRight="@id/input_name"
         android:layout_below="@+id/input_name"
-        android:ems="10"
+        android:ems="30"
         android:entries="@array/tage_array"
         android:gravity="center_vertical|center_horizontal|center"
+        android:longClickable="false"
         android:textAlignment="center" />
 
     <EditText
