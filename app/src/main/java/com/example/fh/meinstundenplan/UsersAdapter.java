@@ -36,6 +36,7 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
         titel.setText(fach.createTitle());
         checkBox.setChecked(fach.isChecked());
 
+
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
