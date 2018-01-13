@@ -58,17 +58,40 @@ public class InputFragment extends Fragment {
         buttonadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String tag = String.valueOf(InputTag.getSelectedItem());
+                String id = "";
+                if(tag.equals("Montag"))
+                {
+                    id = "1";
+                }
+                else if(tag.equals("Dienstag"))
+                {
+                    id = "2";
+                }
+                else if(tag.equals("Mittwoch"))
+                {
+                    id = "3";
+                }
+                else if(tag.equals("Donnerstag"))
+                {
+                    id = "4";
+                }
+                else if(tag.equals("Freitag"))
+                {
+                    id = "5";
+                }
+
                 activity.addFach
-                        (InputSemester.getText().toString(),InputName.getText().toString(),String.valueOf(InputTag.getSelectedItem()).toString(),
+                        (InputSemester.getText().toString(),InputName.getText().toString(),tag,
                                 InputBeginn.getText().toString(), InputEnde.getText().toString(), InputRaum.getText().toString(),
-                                InputDozent.getText().toString(), InputKuerzel.getText().toString(), true);
-                InputSemester.setText("Semester");
-                InputName.setText("Name");
-                InputBeginn.setText("Beginn");
-                InputEnde.setText("Ende");
-                InputRaum.setText("Raum");
-                InputDozent.setText("Dozent");
-                InputKuerzel.setText("Kuerzel");
+                                InputDozent.getText().toString(), InputKuerzel.getText().toString(), true, id);
+                InputSemester.setText(R.string.input_semester);
+                InputName.setText(R.string.input_name);
+                InputBeginn.setText(R.string.input_beginn);
+                InputEnde.setText(R.string.input_ende);
+                InputRaum.setText(R.string.input_raum);
+                InputDozent.setText(R.string.input_dozent);
+                InputKuerzel.setText(R.string.input_kuerzel);
                 InputSemester.requestFocus();
                 InputMethodManager mgr = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
                 mgr.hideSoftInputFromWindow(InputSemester.getWindowToken(),0);

@@ -14,7 +14,14 @@ public class Fach
     private String dozent;
     private String kuerzel;
     private boolean checked;
+    private String id;
 
+    public String getId(){
+        return id;
+}
+    public void setId(String id){
+        this.id = id;
+    }
 
     public String getSemester() {
         return semester;
@@ -89,7 +96,7 @@ public class Fach
     }
 
 
-    public Fach(String sem, String n, String t, String b, String e, String r, String doz, String kue, boolean ak)
+    public Fach(String sem, String n, String t, String b, String e, String r, String doz, String kue, boolean ak, String id)
     {
         setSemester(sem);
         setName(n);
@@ -100,37 +107,12 @@ public class Fach
         setDozent(doz);
         setKuerzel(kue);
         setChecked(ak);
+        setId(id);
     }
 
-    public Fach(){
-        setSemester("0");
-        setName("Musterfach");
-        setTag("Sonntag");
-        setBeginn("00:00");
-        setEnde("25:25");
-        setRaum("R666");
-        setDozent("Musterdozent");
-        setKuerzel("MD");
-        setChecked(false);
-    }
-
-    @Override
-    public String toString() {
-        return "Fach{" +
-                "semester='" + semester + '\'' +
-                ", name='" + name + '\'' +
-                ", tag='" + tag + '\'' +
-                ", beginn='" + beginn + '\'' +
-                ", ende='" + ende + '\'' +
-                ", raum='" + raum + '\'' +
-                ", dozent='" + dozent + '\'' +
-                ", kuerzel='" + kuerzel + '\'' +
-                ", aktiv=" + checked +
-                '}';
-    }
 
     public String CSVtoString() {
-        return semester +";"+name+";"+tag+";"+beginn+";"+ende+";"+raum+";"+dozent+";"+kuerzel+";"+checked;
+        return semester +";"+name+";"+tag+";"+beginn+";"+ende+";"+raum+";"+dozent+";"+kuerzel+";"+checked+";"+id;
     }
 
     public String createTitle(){

@@ -50,9 +50,9 @@ public class Stundenplan extends AppCompatActivity
     public ArrayList<Fach> Donnerstag = new ArrayList<>();
     public ArrayList<Fach> Freitag = new ArrayList<>();
 
-    public void addFach(String s, String n, String t, String b, String e, String r, String d, String k, boolean ak)
+    public void addFach(String s, String n, String t, String b, String e, String r, String d, String k, boolean ak, String id)
     {
-        Fach tmpfach = new Fach(s, n, t, b, e, r, d, k, ak);
+        Fach tmpfach = new Fach(s, n, t, b, e, r, d, k, ak, id);
         Katalog.add(tmpfach);
     }
 
@@ -65,11 +65,20 @@ public class Stundenplan extends AppCompatActivity
         });
     }
 
+    public void sortTage_Semester(ArrayList<Fach> tmp){
+        Collections.sort(tmp, new Comparator<Fach>() {
+            @Override
+            public int compare(Fach o2, Fach o1) {
+                return (o2.getSemester().compareTo(o1.getSemester()));
+            }
+        });
+    }
+
     public void sortTage_Tage(ArrayList<Fach> tmp){
         Collections.sort(tmp, new Comparator<Fach>() {
             @Override
             public int compare(Fach o2, Fach o1) {
-                return (o1.getTag().compareTo(o2.getTag()));
+                return (o2.getId().compareTo(o1.getId()));
             }
         });
     }
@@ -80,6 +89,7 @@ public class Stundenplan extends AppCompatActivity
     private void readStundenplan() {
         InputStream is = getResources().openRawResource(R.raw.ini_ws17);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8") ));
+        String id = "";
 
         String line = "";
         try {
@@ -91,8 +101,30 @@ public class Stundenplan extends AppCompatActivity
                 // Split by ';'
                 String[] tokens = line.split(";");
 
+                if(tokens[2].equals("Montag"))
+                {
+                      id = "1";
+                }
+                else if(tokens[2].equals("Dienstag"))
+                {
+                    id = "2";
+                }
+                else if(tokens[2].equals("Mittwoch"))
+                {
+                    id = "3";
+                }
+                else if(tokens[2].equals("Donnerstag"))
+                {
+                    id = "4";
+                }
+                else if(tokens[2].equals("Freitag"))
+                {
+                    id = "5";
+                }
+
+
                 //Read the data
-                addFach(tokens[0], tokens[1],tokens[2],tokens[3],tokens[4],tokens[5],tokens[6],tokens[7], false);
+                addFach(tokens[0], tokens[1],tokens[2],tokens[3],tokens[4],tokens[5],tokens[6],tokens[7], false, id);
                 Log.d("ReadStundenplan", "Just created: " + Katalog.get(Katalog.size() - 1));
 
                 //
@@ -162,7 +194,7 @@ public class Stundenplan extends AppCompatActivity
                 check = false;
             }
             Log.d("Check :" + check, "token 7: " + tokens[8]);
-            addFach(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], tokens[6], tokens[7], check);
+            addFach(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], tokens[6], tokens[7], check, tokens[9]);
         }
     }
 
@@ -198,6 +230,13 @@ public class Stundenplan extends AppCompatActivity
                 Freitag.add(Katalog.get(i));
             }
         }
+        sortTage_Semester(Montag);
+        sortTage_Semester(Dienstag);
+        sortTage_Semester(Mittwoch);
+        sortTage_Semester(Donnerstag);
+        sortTage_Semester(Freitag);
+
+
         sortTage_Beginn(Montag);
         sortTage_Beginn(Dienstag);
         sortTage_Beginn(Mittwoch);
@@ -212,15 +251,6 @@ public class Stundenplan extends AppCompatActivity
             setContentView(R.layout.activity_stundenplan);
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
-
-            FloatingActionButton fab = findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
 
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -261,12 +291,7 @@ public class Stundenplan extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+       return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -284,6 +309,7 @@ public class Stundenplan extends AppCompatActivity
             fragment = new ShowStundenplanFragment();
 
         } else if (id == R.id.Sidebar_Stundenplan_verwalten) {
+            sortTage_Semester(Katalog);
             sortTage_Beginn(Katalog);
             sortTage_Tage(Katalog);
             fragment = new KatalogFragment();
@@ -296,14 +322,6 @@ public class Stundenplan extends AppCompatActivity
             setContentView(R.layout.activity_stundenplan);
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
-            FloatingActionButton fab = findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Einlesen erfolgt", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                     this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
