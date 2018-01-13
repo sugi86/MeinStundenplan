@@ -37,6 +37,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Stundenplan extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -86,6 +87,7 @@ public class Stundenplan extends AppCompatActivity
 
     private void writeBackup(){
         try {
+
             String state = Environment.getExternalStorageState();
             if(state.equals(Environment.MEDIA_MOUNTED))
             {
@@ -94,10 +96,19 @@ public class Stundenplan extends AppCompatActivity
                 File specialExternalDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
             }
 
-            SharedPreferences sf = getPreferences(0);
+            SharedPreferences sf = getSharedPreferences("Backup", 0);
             SharedPreferences.Editor editor = sf.edit();
-            String tmpstring;
+            /*Map<String,?> keys = sf.getAll();
+            for(Map.Entry<String,?> entry: keys.entrySet())
+            {
+                editor.remove(entry.getKey());
+                editor.commit();
+            }
+            */
             editor.clear();
+            editor.commit();
+            String tmpstring;
+
             for (int i = 0; i < Katalog.size(); i++) {
                 tmpstring = Integer.toString(i);
                 editor.putString(tmpstring,Katalog.get(i).CSVtoString());
@@ -113,7 +124,25 @@ public class Stundenplan extends AppCompatActivity
     }
 
     private void readBackup() {
+        String tmpstring;
+        boolean check;
+        Katalog.clear();
         SharedPreferences sf = getSharedPreferences("Backup", 0);
+        Map<String,?> keys = sf.getAll();
+
+        for(Map.Entry<String,?> entry: keys.entrySet())
+        {
+            tmpstring=entry.getValue().toString();
+            String[] tokens = tmpstring.split(";");
+
+            Log.d("map values",entry.getKey() + ": " +
+                    entry.getValue().toString());
+            check = Boolean.valueOf(tokens[8]);
+            addFach(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], tokens[6], tokens[7], check);
+        }
+
+
+        /*
         Katalog.clear();
         int i = 0;
         String endstring = "Initialized";
@@ -124,7 +153,7 @@ public class Stundenplan extends AppCompatActivity
             endstring = sf.getString(Integer.toString(i), "Keiner!");
             if (endstring.equals("Keiner!"))
             {
-                // Log.d("Abbruchbedingung", "Endstring: " + endstring);
+                Log.d("Abbruchbedingung", "Endstring: " + endstring);
                 break;
             }
             else {
@@ -136,6 +165,7 @@ public class Stundenplan extends AppCompatActivity
                 Log.d("In While Schleife", "Zählvariable " + i);
             }
         }
+        */
     }
 
     private void createStundenplan()
