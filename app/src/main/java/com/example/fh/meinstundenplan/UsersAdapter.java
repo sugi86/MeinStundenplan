@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
@@ -19,12 +20,20 @@ import java.util.ArrayList;
  */
 
 public class UsersAdapter extends ArrayAdapter<Fach> {
+    private ArrayList<Fach> list = new ArrayList<Fach>();
+    private Context context;
+
+
+
     public UsersAdapter(Context context, ArrayList<Fach> users) {
         super(context, 0, users);
+        this.list = users;
+        this.context = context;
     }
 
+
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
 
         Fach fach = getItem(position);
@@ -38,9 +47,10 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
         // Lookup view for data population
         TextView titel = (TextView) convertView.findViewById(R.id.Fach_Titel);
         CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.checkBox);
+        Button button = (Button) convertView.findViewById(R.id.button_delete);
+
 
         checkBox.setTag(position);
-        // Populate the data into the template view using the data object
         titel.setText(fach.createTitle());
         checkBox.setChecked(fach.isChecked());
 
@@ -58,6 +68,17 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
                 }
             }
         });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                list.remove(position);
+                Snackbar.make(v, "Fach erfolgreich aus dem Katalog gelöscht", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
+
         // Return the completed view to render on screen
         return convertView;
     }

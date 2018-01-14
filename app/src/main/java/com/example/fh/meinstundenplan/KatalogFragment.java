@@ -34,6 +34,9 @@ public class KatalogFragment extends Fragment {
         final UsersAdapter usersAdapter = new UsersAdapter (activity, activity.Katalog);
         list.setAdapter(usersAdapter);
 
+
+
+
         // Inflate the layout for this fragment
         return view;
     }

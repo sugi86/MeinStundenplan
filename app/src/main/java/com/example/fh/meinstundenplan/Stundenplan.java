@@ -56,6 +56,11 @@ public class Stundenplan extends AppCompatActivity
         Katalog.add(tmpfach);
     }
 
+    public void deleteFach(int position)
+    {
+        Log.d("Test: ", "Löschen klappt.");
+    }
+
     public void sortTage_Beginn(ArrayList<Fach> tmp){
         Collections.sort(tmp, new Comparator<Fach>() {
             @Override
@@ -342,6 +347,8 @@ public class Stundenplan extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 
 
 }
