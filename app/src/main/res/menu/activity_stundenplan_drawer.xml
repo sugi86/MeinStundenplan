@@ -20,15 +20,15 @@
             android:id="@+id/Sidebar_Einlesen"
             android:icon="@drawable/file_download_black"
             android:title="@string/read" />
+
     </group>
 
     <item android:title="@string/Backup">
             <menu>
-                    <item
-                        android:title="@string/write_Backup"
-                        android:id="@+id/Sidebar_write_Backup"
-                        android:icon="@drawable/save_black"
-                        />
+                <item
+                    android:title="@string/write_Backup"
+                    android:id="@+id/Sidebar_write_Backup"
+                    android:icon="@drawable/save_black" />
                 <item
                     android:id="@+id/Sidebar_read_Backup"
                     android:icon="@drawable/delete_forever_black"
