@@ -128,6 +128,7 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
                 InputRaum.setText(list.get(position).getRaum());
                 InputDozent.setText(list.get(position).getDozent());
                 InputKuerzel.setText(list.get(position).getKuerzel());
+                InputTag.setSelection(Integer.parseInt(list.get(position).getId())-1);
 
 
 
