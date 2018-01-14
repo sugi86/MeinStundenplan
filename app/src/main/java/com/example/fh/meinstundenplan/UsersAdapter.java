@@ -31,6 +31,12 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
         this.context = context;
     }
 
+    public void updateArray(ArrayList<Fach> newlist){
+        list.clear();
+        list.addAll(newlist);
+        this.notifyDataSetChanged();
+    }
+
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -73,6 +79,7 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
             @Override
             public void onClick(View v) {
                 list.remove(position);
+                notifyDataSetChanged();
                 Snackbar.make(v, "Fach erfolgreich aus dem Katalog gelöscht", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
