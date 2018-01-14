@@ -6,19 +6,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/Sidebar_Stundenplan_anzeigen"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/assignment_black"
             android:title="@string/show_stundenplan" />
         <item
             android:id="@+id/Sidebar_Stundenplan_verwalten"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/build_black"
             android:title="@string/manage_stundenplan" />
         <item
             android:id="@+id/Sidebar_Neues_Fach"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/input_black"
             android:title="@string/new_fach" />
         <item
             android:id="@+id/Sidebar_Einlesen"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/file_download_black"
             android:title="@string/read" />
     </group>
 
@@ -27,11 +27,11 @@
                     <item
                         android:title="@string/write_Backup"
                         android:id="@+id/Sidebar_write_Backup"
-                        android:icon="@drawable/ic_menu_slideshow"
+                        android:icon="@drawable/save_black"
                         />
                 <item
                     android:id="@+id/Sidebar_read_Backup"
-                    android:icon="@drawable/ic_menu_slideshow"
+                    android:icon="@drawable/delete_forever_black"
                     android:title="@string/Clear_all" />
             </menu>
     </item>

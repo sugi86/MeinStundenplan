@@ -38,6 +38,8 @@ public class ShowStundenplanFragment extends Fragment {
         tabLayout.addTab(tabLayout.newTab().setText(R.string.Friday));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
+
+
         final ViewPager pager = (ViewPager) view.findViewById(R.id.pager);
 
         final Stundenplan activity =  (Stundenplan) getActivity();
