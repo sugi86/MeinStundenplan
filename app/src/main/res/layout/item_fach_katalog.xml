@@ -18,13 +18,24 @@
         />
 
     <Button
-        android:id="@+id/button_delete"
+        android:id="@+id/button_edit"
         android:layout_toLeftOf="@+id/checkBox"
         android:layout_toStartOf="@+id/checkBox"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawableBottom="@android:drawable/ic_menu_edit"
+        style="?android:attr/borderlessButtonStyle"
+        />
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_toLeftOf="@+id/button_edit"
+        android:layout_toStartOf="@+id/button_edit"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="?android:attr/selectableItemBackground"
         android:drawableBottom="@android:drawable/ic_menu_delete"
         style="?android:attr/borderlessButtonStyle"
         />
+
 </RelativeLayout>

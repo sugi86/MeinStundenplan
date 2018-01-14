@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.fh.meinstundenplan.InputFragment">
+
+    <EditText
+        android:id="@+id/input_semester"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:inputType="textPersonName"
+        android:hint="@string/input_semester"/>
+
+    <EditText
+        android:id="@+id/input_name"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/input_semester"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:inputType="textPersonName"
+        android:hint="@string/input_name" />
+
+    <Spinner
+        android:id="@+id/input_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignRight="@id/input_name"
+        android:layout_below="@+id/input_name"
+        android:ems="30"
+        android:entries="@array/tage_array"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:longClickable="false"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/input_beginn"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/input_tag"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:inputType="textPersonName"
+        android:hint="@string/input_beginn" />
+
+    <EditText
+        android:id="@+id/input_ende"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/input_beginn"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:inputType="textPersonName"
+        android:hint="@string/input_ende" />
+
+    <EditText
+        android:id="@+id/input_raum"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/input_ende"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:inputType="textPersonName"
+        android:hint="@string/input_raum" />
+
+    <EditText
+        android:id="@+id/input_dozent"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/input_raum"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:inputType="textPersonName"
+        android:hint="@string/input_dozent" />
+
+    <EditText
+        android:id="@+id/input_kuerzel"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/input_dozent"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:inputType="textPersonName"
+        android:hint="@string/input_kuerzel" />
+
+    <Button
+        android:id="@+id/dialogButtonOK"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/input_kuerzel"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/input_kuerzel"
+        android:hint="@string/dialogButtonOK" />
+
+    <Button
+        android:id="@+id/dialogButtonCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/input_kuerzel"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/input_kuerzel"
+        android:hint="@string/dialogButtonCancel" />
+
+
+</RelativeLayout>
