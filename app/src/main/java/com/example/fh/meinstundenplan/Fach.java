@@ -120,7 +120,7 @@ public class Fach
     }
 
     public String createTitle_ohne_Tag(){
-        return semester +" - "+ name;
+        return name + '\n' +" "+ semester;
     }
 
     public String createAttribute(){
