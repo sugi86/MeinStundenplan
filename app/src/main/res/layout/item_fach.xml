@@ -10,7 +10,7 @@
         android:layout_weight="0.5"
         android:ems="10"
         android:text="@string/Titel"
-        android:textSize="30dp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/Fach_Attribut"
@@ -18,9 +18,9 @@
         android:layout_height="match_parent"
         android:layout_weight="0.5"
         android:ems="10"
-        android:text="@string/Attribute"
         android:gravity="end"
-        android:textSize="15dp" />
+        android:text="@string/Attribute"
+        android:textSize="15sp" />
 
 
 </LinearLayout>

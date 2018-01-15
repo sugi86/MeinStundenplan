@@ -8,15 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import java.util.List;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class KatalogFragment extends Fragment {
-
-    ListView list;
 
     public KatalogFragment() {
         // Required empty public constructor
@@ -24,17 +20,14 @@ public class KatalogFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_katalog, container, false);
 
-        list = (ListView) view.findViewById(R.id.listView_list);
+        ListView list = view.findViewById(R.id.listView_list);
         final Stundenplan activity = (Stundenplan) getActivity();
 
-        final UsersAdapter usersAdapter = new UsersAdapter (activity, activity.Katalog);
+        final UsersAdapter usersAdapter = new UsersAdapter(activity, activity.Katalog);
         list.setAdapter(usersAdapter);
-
-
 
 
         // Inflate the layout for this fragment

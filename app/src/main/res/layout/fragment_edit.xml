@@ -12,8 +12,8 @@
         android:layout_marginTop="15dp"
         android:ems="10"
         android:gravity="center_vertical|center_horizontal|center"
-        android:inputType="textPersonName"
-        android:hint="@string/input_semester"/>
+        android:hint="@string/input_semester"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/input_name"
@@ -23,13 +23,14 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:gravity="center_vertical|center_horizontal|center"
-        android:inputType="textPersonName"
-        android:hint="@string/input_name" />
+        android:hint="@string/input_name"
+        android:inputType="textPersonName" />
 
     <Spinner
         android:id="@+id/input_tag"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
+        android:layout_alignEnd="@id/input_name"
         android:layout_alignRight="@id/input_name"
         android:layout_below="@+id/input_name"
         android:ems="30"
@@ -46,8 +47,8 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:gravity="center_vertical|center_horizontal|center"
-        android:inputType="textPersonName"
-        android:hint="@string/input_beginn" />
+        android:hint="@string/input_beginn"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/input_ende"
@@ -57,8 +58,8 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:gravity="center_vertical|center_horizontal|center"
-        android:inputType="textPersonName"
-        android:hint="@string/input_ende" />
+        android:hint="@string/input_ende"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/input_raum"
@@ -68,8 +69,8 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:gravity="center_vertical|center_horizontal|center"
-        android:inputType="textPersonName"
-        android:hint="@string/input_raum" />
+        android:hint="@string/input_raum"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/input_dozent"
@@ -79,8 +80,8 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:gravity="center_vertical|center_horizontal|center"
-        android:inputType="textPersonName"
-        android:hint="@string/input_dozent" />
+        android:hint="@string/input_dozent"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/input_kuerzel"
@@ -90,8 +91,8 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:gravity="center_vertical|center_horizontal|center"
-        android:inputType="textPersonName"
-        android:hint="@string/input_kuerzel" />
+        android:hint="@string/input_kuerzel"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/dialogButtonOK"

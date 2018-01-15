@@ -6,33 +6,39 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/Sidebar_Stundenplan_anzeigen"
-            android:icon="@drawable/assignment_black"
+            android:icon="@mipmap/assignment_black"
             android:title="@string/show_stundenplan" />
         <item
             android:id="@+id/Sidebar_Stundenplan_verwalten"
-            android:icon="@drawable/build_black"
+            android:icon="@mipmap/build_black"
             android:title="@string/manage_stundenplan" />
         <item
             android:id="@+id/Sidebar_Neues_Fach"
-            android:icon="@drawable/input_black"
+            android:icon="@mipmap/input_black"
             android:title="@string/new_fach" />
         <item
             android:id="@+id/Sidebar_Einlesen"
-            android:icon="@drawable/file_download_black"
+            android:icon="@mipmap/file_download_black"
             android:title="@string/read" />
 
     </group>
 
     <item android:title="@string/Backup">
-            <menu>
-                <item
-                    android:title="@string/write_Backup"
-                    android:id="@+id/Sidebar_write_Backup"
-                    android:icon="@drawable/save_black" />
-                <item
-                    android:id="@+id/Sidebar_read_Backup"
-                    android:icon="@drawable/delete_forever_black"
-                    android:title="@string/Clear_all" />
-            </menu>
+        <menu>
+            <item
+                android:id="@+id/Sidebar_read_Backup"
+                android:icon="@mipmap/folder_open_black"
+                android:title="@string/read_Backup" />
+
+            <item
+                android:id="@+id/Sidebar_write_Backup"
+                android:icon="@mipmap/save_black"
+                android:title="@string/write_Backup" />
+
+            <item
+                android:id="@+id/Sidebar_katalog_clear"
+                android:icon="@mipmap/delete_forever_black"
+                android:title="@string/Clear_all" />
+        </menu>
     </item>
 </menu>

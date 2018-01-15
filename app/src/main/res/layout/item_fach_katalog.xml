@@ -14,8 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@id/Fach_Titel"
-        android:layout_alignRight="@id/Fach_Titel"
-        />
+        android:layout_alignRight="@id/Fach_Titel" />
 
     <Space
         android:id="@+id/space1"
@@ -28,13 +27,13 @@
 
     <Button
         android:id="@+id/button_edit"
-        android:layout_toLeftOf="@+id/space1"
-        android:layout_toStartOf="@+id/space1"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_toLeftOf="@+id/space1"
+        android:layout_toStartOf="@+id/space1"
         android:background="?android:attr/selectableItemBackground"
         android:drawableBottom="@android:drawable/ic_menu_edit"
-        style="?android:attr/borderlessButtonStyle"
         android:gravity="center_vertical" />
 
     <Space
@@ -48,13 +47,13 @@
 
     <Button
         android:id="@+id/button_delete"
-        android:layout_toLeftOf="@+id/space2"
-        android:layout_toStartOf="@+id/space2"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_toLeftOf="@+id/space2"
+        android:layout_toStartOf="@+id/space2"
         android:background="?android:attr/selectableItemBackground"
         android:drawableBottom="@android:drawable/ic_menu_delete"
-        style="?android:attr/borderlessButtonStyle"
-        android:gravity="center_vertical"/>
+        android:gravity="center_vertical" />
 
 </RelativeLayout>

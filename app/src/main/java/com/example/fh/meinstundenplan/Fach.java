@@ -1,10 +1,7 @@
 package com.example.fh.meinstundenplan;
-/**
- * Created by Sugi86 on 08.01.2018.
- */
 
-public class Fach
-{
+
+class Fach {
     private String semester;
     private String name;
     private String tag;
@@ -16,10 +13,25 @@ public class Fach
     private boolean checked;
     private String id;
 
-    public String getId(){
+    public Fach(String sem, String n, String t, String b, String e,
+                String r, String doz, String kue, boolean ak, String id) {
+        setSemester(sem);
+        setName(n);
+        setTag(t);
+        setBeginn(b);
+        setEnde(e);
+        setRaum(r);
+        setDozent(doz);
+        setKuerzel(kue);
+        setChecked(ak);
+        setId(id);
+    }
+
+    public String getId() {
         return id;
-}
-    public void setId(String id){
+    }
+
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -95,35 +107,20 @@ public class Fach
         this.checked = aktiv;
     }
 
-
-    public Fach(String sem, String n, String t, String b, String e, String r, String doz, String kue, boolean ak, String id)
-    {
-        setSemester(sem);
-        setName(n);
-        setTag(t);
-        setBeginn(b);
-        setEnde(e);
-        setRaum(r);
-        setDozent(doz);
-        setKuerzel(kue);
-        setChecked(ak);
-        setId(id);
-    }
-
-
     public String CSVtoString() {
-        return semester +";"+name+";"+tag+";"+beginn+";"+ende+";"+raum+";"+dozent+";"+kuerzel+";"+checked+";"+id;
+        return semester + ";" + name + ";" + tag + ";" + beginn + ";" + ende + ";" + raum
+                + ";" + dozent + ";" + kuerzel + ";" + checked + ";" + id;
     }
 
-    public String createTitle(){
-        return semester +" - "+ name + " - " + tag + " - " + raum +'\n' + beginn + " - " + ende + '\n' + dozent;
+    public String createTitle() {
+        return semester + " - " + name + " - " + tag + " - " + raum + '\n' + beginn + " - " + ende + '\n' + dozent;
     }
 
-    public String createTitle_ohne_Tag(){
-        return name + '\n' +" "+ semester;
+    public String createTitle_ohne_Tag() {
+        return name + '\n' + " " + semester;
     }
 
-    public String createAttribute(){
-        return raum +'\n' + beginn + " - " + ende + '\n' + dozent;
+    public String createAttribute() {
+        return raum + '\n' + beginn + " - " + ende + '\n' + dozent;
     }
 }

@@ -6,19 +6,18 @@
     <string name="manage_stundenplan">Katalog anzeigen</string>
     <string name="new_fach">Neues Fach anlegen</string>
     <string name="read">CSV einlesen</string>
-    <string name="read_Backup">Backup einlesen</string>
     <string name="write_Backup">Daten im Backup sichern</string>
-    <string name="action_settings">Settings</string>
-    <string name="Text_Stundenplan_Leer">Hier gibt es noch nichts zu sehen. Weiter gehen.</string>
-    <string name="Text_Test"></string>
+    <string name="read_Backup">Daten aus Backup laden</string>
+    <string name="Text_Test" />
     <string name="Backup">Datensicherung</string>
     <string name="button_input">Fach hinzufügen</string>
     <string name="Clear_all">Katalog zurücksetzen</string>
+    <string name="Mainmenue">Hauptmenü</string>
+    <string name="ProjectDescription">StundenplanApp@SWE.fh-bi.de</string>
 
 
     <string name="input_semester">Semester</string>
     <string name="input_name">Name</string>
-    <string name="input_tag">Tag</string>
     <string name="input_beginn">Beginn</string>
     <string name="input_ende">Ende</string>
     <string name="input_raum">Raum</string>
@@ -28,12 +27,6 @@
 
     <string name="Titel">Titel</string>
     <string name="Attribute">Attribute</string>
-
-    <string name="fragmentMonday">Monday</string>
-    <string name="fragmentTuesday">Tuesday</string>
-    <string name="fragmentWednesday">Wednesday</string>
-    <string name="fragmentThursday">Thursday</string>
-    <string name="fragmentFriday">Friday</string>
 
     <string name="Monday">MO</string>
     <string name="Tuesday">DI</string>
@@ -53,5 +46,4 @@
     <string name="dialogButtonCancel">Abbrechen</string>
 
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -11,9 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ShowStundenplanFragment extends Fragment {
 
 
@@ -28,7 +25,7 @@ public class ShowStundenplanFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_show_stundenplan, container, false);
 
 
-        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
+        TabLayout tabLayout = view.findViewById(R.id.tab_layout);
 
 
         tabLayout.addTab(tabLayout.newTab().setText(R.string.Monday));
@@ -39,10 +36,7 @@ public class ShowStundenplanFragment extends Fragment {
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
 
-
-        final ViewPager pager = (ViewPager) view.findViewById(R.id.pager);
-
-        final Stundenplan activity =  (Stundenplan) getActivity();
+        final ViewPager pager = view.findViewById(R.id.pager);
 
         FragmentManager fragmentManager = getFragmentManager();
         final PagerAdapter adapter = new PagerAdapter(fragmentManager, tabLayout.getTabCount());

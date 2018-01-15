@@ -5,8 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 
-public class PagerAdapter extends FragmentStatePagerAdapter {
-    int mNumOfTabs;
+class PagerAdapter extends FragmentStatePagerAdapter {
+    private final int mNumOfTabs;
 
     public PagerAdapter(FragmentManager fm, int NumOfTabs) {
         super(fm);
@@ -18,20 +18,15 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                FragmentMonday tabMonday = new FragmentMonday();
-                return tabMonday;
+                return new FragmentMonday();
             case 1:
-                FragmentTuesday tabTuesday = new FragmentTuesday();
-                return tabTuesday;
+                return new FragmentTuesday();
             case 2:
-                FragmentWednesday tabWednesday = new FragmentWednesday();
-                return tabWednesday;
+                return new FragmentWednesday();
             case 3:
-                FragmentThursday tabThursday = new FragmentThursday();
-                return tabThursday;
+                return new FragmentThursday();
             case 4:
-                FragmentFriday tabFriday = new FragmentFriday();
-                return tabFriday;
+                return new FragmentFriday();
             default:
                 return null;
         }
