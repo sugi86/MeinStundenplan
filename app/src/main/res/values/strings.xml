@@ -3,7 +3,7 @@
     <string name="navigation_drawer_open">Menü öffen</string>
     <string name="navigation_drawer_close">Menü schließen</string>
     <string name="show_stundenplan">Stundenplan anzeigen</string>
-    <string name="manage_stundenplan">Katalog anzeigen</string>
+    <string name="manage_stundenplan">Katalog bearbeiten</string>
     <string name="new_fach">Neues Fach anlegen</string>
     <string name="read">CSV einlesen</string>
     <string name="write_Backup">Daten im Backup sichern</string>
