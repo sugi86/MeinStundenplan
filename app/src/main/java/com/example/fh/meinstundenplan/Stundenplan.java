@@ -77,7 +77,7 @@ public class Stundenplan extends AppCompatActivity implements NavigationView.OnN
 
     private void readStundenplan() {
         InputStream is = getResources().openRawResource(R.raw.ini_ws17);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is, Charset.forName("ISO-8859-1")));
         String id = "";
 
         String line = "";
