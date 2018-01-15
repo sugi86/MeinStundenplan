@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-
+//PagerAdapter für das Tablayout
 class PagerAdapter extends FragmentStatePagerAdapter {
     private final int mNumOfTabs;
 

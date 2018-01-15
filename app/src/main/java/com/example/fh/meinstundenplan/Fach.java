@@ -13,6 +13,8 @@ class Fach {
     private boolean checked;
     private String id;
 
+
+    //Konstruktor
     public Fach(String sem, String n, String t, String b, String e,
                 String r, String doz, String kue, boolean ak, String id) {
         setSemester(sem);
@@ -27,6 +29,7 @@ class Fach {
         setId(id);
     }
 
+    //Setter und Getter
     public String getId() {
         return id;
     }
@@ -107,11 +110,13 @@ class Fach {
         this.checked = aktiv;
     }
 
+    //Ausgabefunktion für Backup Funktion
     public String CSVtoString() {
         return semester + ";" + name + ";" + tag + ";" + beginn + ";" + ende + ";" + raum
                 + ";" + dozent + ";" + kuerzel + ";" + checked + ";" + id;
     }
 
+    //Ausgabefunktion für die Anzeige im Katalog und/oder Stundenplan
     public String createTitle() {
         return semester + " - " + name + " - " + tag + " - " + raum + '\n' + beginn + " - " + ende + '\n' + dozent;
     }

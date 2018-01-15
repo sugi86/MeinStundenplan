@@ -1,6 +1,5 @@
 package com.example.fh.meinstundenplan;
 
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -13,10 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class InputFragment extends Fragment {
 
     private EditText InputSemester;
@@ -28,11 +23,9 @@ public class InputFragment extends Fragment {
     private EditText InputDozent;
     private EditText InputKuerzel;
 
-
     public InputFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -56,6 +49,7 @@ public class InputFragment extends Fragment {
             public void onClick(View v) {
                 String tag = String.valueOf(InputTag.getSelectedItem());
                 String id = "";
+                //Wochentag id setzen
                 switch (tag) {
                     case "Montag":
                         id = "1";
@@ -73,7 +67,7 @@ public class InputFragment extends Fragment {
                         id = "5";
                         break;
                 }
-
+                //Fach in den Katalog einfügen
                 activity.addFach(InputSemester.getText().toString(), InputName.getText().toString(), tag, InputBeginn.getText().toString(), InputEnde.getText().toString(), InputRaum.getText().toString(), InputDozent.getText().toString(), InputKuerzel.getText().toString(), true, id);
                 InputSemester.setText(null);
                 InputName.setText(null);
@@ -82,8 +76,6 @@ public class InputFragment extends Fragment {
                 InputRaum.setText(null);
                 InputDozent.setText(null);
                 InputKuerzel.setText(null);
-
-
                 InputSemester.requestFocus();
                 InputMethodManager mgr = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
                 assert mgr != null;
@@ -91,9 +83,6 @@ public class InputFragment extends Fragment {
                 Snackbar.make(v, "Fach erfolgreich zum Katalog hinzugefügt", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
-        // Inflate the layout for this fragment
         return view;
     }
-
-
 }

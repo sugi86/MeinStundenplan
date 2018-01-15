@@ -13,5 +13,4 @@ class CustomOnItemSelectedListener implements OnItemSelectedListener {
     public void onNothingSelected(AdapterView<?> arg0) {
 
     }
-
 }

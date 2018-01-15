@@ -13,21 +13,15 @@ import android.view.ViewGroup;
 
 public class ShowStundenplanFragment extends Fragment {
 
-
     public ShowStundenplanFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_show_stundenplan, container, false);
-
-
         TabLayout tabLayout = view.findViewById(R.id.tab_layout);
-
-
         tabLayout.addTab(tabLayout.newTab().setText(R.string.Monday));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.Tuesday));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.Wednesday));
@@ -35,12 +29,10 @@ public class ShowStundenplanFragment extends Fragment {
         tabLayout.addTab(tabLayout.newTab().setText(R.string.Friday));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-
         final ViewPager pager = view.findViewById(R.id.pager);
 
         FragmentManager fragmentManager = getFragmentManager();
         final PagerAdapter adapter = new PagerAdapter(fragmentManager, tabLayout.getTabCount());
-
         pager.setAdapter(adapter);
         pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

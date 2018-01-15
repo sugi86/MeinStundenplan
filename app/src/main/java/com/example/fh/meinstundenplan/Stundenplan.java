@@ -34,28 +34,24 @@ public class Stundenplan extends AppCompatActivity implements NavigationView.OnN
     public final ArrayList<Fach> Donnerstag = new ArrayList<>();
     public final ArrayList<Fach> Freitag = new ArrayList<>();
 
+    //Funktion um ein Fach dem Katalog hinzuzufügen
     public void addFach(String s, String n, String t, String b, String e,
                         String r, String d, String k, boolean ak, String id) {
         Fach tmpfach = new Fach(s, n, t, b, e, r, d, k, ak, id);
         Katalog.add(tmpfach);
     }
 
-// --Commented out by Inspection START (15.01.2018 02:02):
-//    public void deleteFach()
-//    {
-//        Log.d("Test: ", "Löschen klappt.");
-//    }
-// --Commented out by Inspection STOP (15.01.2018 02:02)
-
+    //Funktion um ein Fach-ArrayList nach dem Attribut Beginn zu sortieren
     private void sortTage_Beginn(ArrayList<Fach> tmp) {
         Collections.sort(tmp, new Comparator<Fach>() {
             @Override
             public int compare(Fach o2, Fach o1) {
-                return (o1.getBeginn().compareTo(o2.getBeginn())) * -1;
+                return (o2.getBeginn().compareTo(o1.getBeginn()));
             }
         });
     }
 
+    //Funktion um ein Fach-ArrayList nach dem Attribut Semester zu sortieren
     private void sortTage_Semester(ArrayList<Fach> tmp) {
         Collections.sort(tmp, new Comparator<Fach>() {
             @Override
@@ -65,6 +61,7 @@ public class Stundenplan extends AppCompatActivity implements NavigationView.OnN
         });
     }
 
+    //Funktion um ein Fach-ArrayList nach der Wochentag id zu sortieren
     private void sortTage_Tage(ArrayList<Fach> tmp) {
         Collections.sort(tmp, new Comparator<Fach>() {
             @Override
@@ -74,20 +71,17 @@ public class Stundenplan extends AppCompatActivity implements NavigationView.OnN
         });
     }
 
-
     private void readStundenplan() {
         InputStream is = getResources().openRawResource(R.raw.ini_ws17);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is, Charset.forName("ISO-8859-1")));
         String id = "";
-
         String line = "";
         try {
-
-            // Ignore first Line
+            // Erste Zeile mit Überschrift ignorieren
             reader.readLine();
             while ((line = reader.readLine()) != null) {
-                Log.d("MyActivity", "Line: " + line);
-                // Split by ';'
+                //Log.d("MyActivity", "Line: " + line);
+                // Am ';' trennen
                 String[] tokens = line.split(";");
 
                 switch (tokens[2]) {
@@ -107,62 +101,60 @@ public class Stundenplan extends AppCompatActivity implements NavigationView.OnN
                         id = "5";
                         break;
                 }
-                //Read the data
+                //Neues Fach mit den Daten füllen
                 addFach(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4],
                         tokens[5], tokens[6], tokens[7], false, id);
-                Log.d("ReadStundenplan", "Just created: " + Katalog.get(Katalog.size() - 1));
-                //
+                //Log.d("ReadStundenplan", "Just created: " + Katalog.get(Katalog.size() - 1));
             }
         } catch (IOException e) {
-            Log.wtf("MyActivity", "Error reading data file on line" + line, e);
+            //Log.wtf("MyActivity", "Error reading data file on line" + line, e);
             e.printStackTrace();
         }
-
     }
 
+    //Funktion um ein Backup des aktuellen Katalogs in die SharedPrefences schreiben
     private void writeBackup() {
         try {
-
             SharedPreferences sf = getSharedPreferences("Backup", 0);
             SharedPreferences.Editor editor = sf.edit();
-
+            //altes Backup löschen
             editor.clear();
             editor.apply();
-
             String tmpstring;
-
+            //Neues Backup schreiben
             for (int i = 0; i < Katalog.size(); i++) {
                 tmpstring = Integer.toString(i);
                 editor.putString(tmpstring, Katalog.get(i).CSVtoString());
                 editor.commit();
-                Log.d("writeSharedPref", sf.getString(tmpstring, "Keiner!"));
+                //Log.d("writeSharedPref", sf.getString(tmpstring, "Keiner!"));
             }
-            Log.d("SharedPref: ", sf.getString("0", "Failed!"));
-            Log.d("SharedPref: ", sf.getString("1", "Failed!"));
         } catch (Exception ex) {
             Log.wtf("InternerSpeicher", "Fehler beim Lesen", ex);
         }
     }
 
+    //Funktion um den Katalog aus dem aktuellen Backup zu füllen
     private void readBackup() {
         String tmpstring;
         boolean check;
+        //Katalog leeren
         Katalog.clear();
         SharedPreferences sf = getSharedPreferences("Backup", 0);
+        //Backup lesen
         Map<String, ?> keys = sf.getAll();
 
         for (Map.Entry<String, ?> entry : keys.entrySet()) {
             tmpstring = entry.getValue().toString();
             String[] tokens = tmpstring.split(";");
-
-            Log.d("map values", entry.getKey() + ": " + entry.getValue().toString());
+            //Log.d("map values", entry.getKey() + ": " + entry.getValue().toString());
             check = tokens[8].equals("true");
-            Log.d("Check :" + check, "token 7: " + tokens[8]);
+            //Log.d("Check :" + check, "token 7: " + tokens[8]);
             addFach(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4],
                     tokens[5], tokens[6], tokens[7], check, tokens[9]);
         }
     }
 
+    //Funktion um die Arrays für die einzelnen Tage zu füllen
     private void createStundenplan() {
         String cmp;
         Montag.clear();
@@ -184,13 +176,12 @@ public class Stundenplan extends AppCompatActivity implements NavigationView.OnN
                 Freitag.add(Katalog.get(i));
             }
         }
+        //Arrays sortieren
         sortTage_Semester(Montag);
         sortTage_Semester(Dienstag);
         sortTage_Semester(Mittwoch);
         sortTage_Semester(Donnerstag);
         sortTage_Semester(Freitag);
-
-
         sortTage_Beginn(Montag);
         sortTage_Beginn(Dienstag);
         sortTage_Beginn(Mittwoch);
@@ -205,13 +196,11 @@ public class Stundenplan extends AppCompatActivity implements NavigationView.OnN
         setContentView(R.layout.activity_stundenplan);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         Fragment fragment;
@@ -245,14 +234,15 @@ public class Stundenplan extends AppCompatActivity implements NavigationView.OnN
         // Handle navigation view item clicks here.
         Fragment fragment;
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-
         fragment = new KatalogFragment();
         int id = item.getItemId();
 
+        //Navigationsmenü
         if (id == R.id.Sidebar_Stundenplan_anzeigen) {
             createStundenplan();
             fragment = new ShowStundenplanFragment();
         } else if (id == R.id.Sidebar_Stundenplan_verwalten) {
+            //Katalog sortieren
             sortTage_Semester(Katalog);
             sortTage_Beginn(Katalog);
             sortTage_Tage(Katalog);
@@ -275,7 +265,6 @@ public class Stundenplan extends AppCompatActivity implements NavigationView.OnN
             navigationView.setNavigationItemSelectedListener(this);
             Snackbar.make(navigationView, "Katalog erfolgreich aus CSV-Datei importiert",
                     Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
         } else if (id == R.id.Sidebar_read_Backup) {
             readBackup();
         } else if (id == R.id.Sidebar_write_Backup) {
@@ -286,11 +275,8 @@ public class Stundenplan extends AppCompatActivity implements NavigationView.OnN
         ft.replace(R.id.container, fragment);
         ft.addToBackStack(null);
         ft.commit();
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 }

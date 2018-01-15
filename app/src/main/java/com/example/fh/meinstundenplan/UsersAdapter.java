@@ -14,56 +14,36 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
-
+//Custom Adapter für den Katalog
 class UsersAdapter extends ArrayAdapter<Fach> {
     private final Context context;
     private ArrayList<Fach> list = new ArrayList<>();
 
-
-    public UsersAdapter(Context context, ArrayList<Fach> users) {
-        super(context, 0, users);
-        this.list = users;
+    public UsersAdapter(Context context, ArrayList<Fach> faecher) {
+        super(context, 0, faecher);
+        this.list = faecher;
         this.context = context;
     }
-
-// --Commented out by Inspection START (15.01.2018 01:58):
-//    public void updateArray(ArrayList<Fach> newlist){
-//        list.clear();
-//        list.addAll(newlist);
-//        this.notifyDataSetChanged();
-//    }
-// --Commented out by Inspection STOP (15.01.2018 01:58)
-
 
     @NonNull
     @Override
     public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
-        // Get the data item for this position
-
         Fach fach = getItem(position);
-
-        // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
-
             convertView = LayoutInflater.from(getContext()).inflate(
                     R.layout.item_fach_katalog, parent, false);
         }
-        // Lookup view for data population
+
         TextView titel = convertView.findViewById(R.id.Fach_Titel);
         CheckBox checkBox = convertView.findViewById(R.id.checkBox);
         Button button_delete = convertView.findViewById(R.id.button_delete);
         Button button_edit = convertView.findViewById(R.id.button_edit);
-
-
         checkBox.setTag(position);
         assert fach != null;
         titel.setText(fach.createTitle());
         checkBox.setChecked(fach.isChecked());
-
-
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -97,29 +77,16 @@ class UsersAdapter extends ArrayAdapter<Fach> {
                 dialog.setContentView(R.layout.fragment_edit);
                 dialog.setTitle("Fach bearbeiten");
 
-                Button buttonok;
-                Button buttoncancel;
-
-                final EditText InputSemester;
-                final EditText InputName;
-                final Spinner InputTag;
-                final EditText InputBeginn;
-                final EditText InputEnde;
-                final EditText InputRaum;
-                final EditText InputDozent;
-                final EditText InputKuerzel;
-
-                InputSemester = dialog.findViewById(R.id.input_semester);
-                InputName = dialog.findViewById(R.id.input_name);
-                InputTag = dialog.findViewById(R.id.input_tag);
-                InputBeginn = dialog.findViewById(R.id.input_beginn);
-                InputEnde = dialog.findViewById(R.id.input_ende);
-                InputRaum = dialog.findViewById(R.id.input_raum);
-                InputDozent = dialog.findViewById(R.id.input_dozent);
-                InputKuerzel = dialog.findViewById(R.id.input_kuerzel);
-                buttonok = dialog.findViewById(R.id.dialogButtonOK);
-                buttoncancel = dialog.findViewById(R.id.dialogButtonCancel);
-
+                final EditText InputSemester = dialog.findViewById(R.id.input_semester);
+                final EditText InputName = dialog.findViewById(R.id.input_name);
+                final Spinner InputTag = dialog.findViewById(R.id.input_tag);
+                final EditText InputBeginn = dialog.findViewById(R.id.input_beginn);
+                final EditText InputEnde = dialog.findViewById(R.id.input_ende);
+                final EditText InputRaum = dialog.findViewById(R.id.input_raum);
+                final EditText InputDozent = dialog.findViewById(R.id.input_dozent);
+                final EditText InputKuerzel = dialog.findViewById(R.id.input_kuerzel);
+                Button buttonok = dialog.findViewById(R.id.dialogButtonOK);
+                Button buttoncancel = dialog.findViewById(R.id.dialogButtonCancel);
 
                 InputSemester.setText(list.get(position).getSemester());
                 InputName.setText(list.get(position).getName());
@@ -130,7 +97,6 @@ class UsersAdapter extends ArrayAdapter<Fach> {
                 InputKuerzel.setText(list.get(position).getKuerzel());
                 InputTag.setSelection(Integer.parseInt(list.get(position).getId()) - 1);
 
-
                 buttoncancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -139,7 +105,6 @@ class UsersAdapter extends ArrayAdapter<Fach> {
                                 Snackbar.LENGTH_LONG).setAction("Action", null).show();
                     }
                 });
-
 
                 buttonok.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -178,7 +143,6 @@ class UsersAdapter extends ArrayAdapter<Fach> {
                                 Snackbar.LENGTH_LONG).setAction("Action", null).show();
                     }
                 });
-
                 dialog.show();
             }
 

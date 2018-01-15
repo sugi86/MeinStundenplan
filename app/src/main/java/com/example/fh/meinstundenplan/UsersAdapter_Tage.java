@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-
+//Custom Adapter für den Stundenplan
 class UsersAdapter_Tage extends ArrayAdapter<Fach> {
     public UsersAdapter_Tage(Context context, ArrayList<Fach> users) {
         super(context, 0, users);

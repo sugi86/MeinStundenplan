@@ -1,20 +1,18 @@
 <resources>
     <string name="app_name">Mein Stundenplan</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Menü öffen</string>
+    <string name="navigation_drawer_close">Menü schließen</string>
     <string name="show_stundenplan">Stundenplan anzeigen</string>
     <string name="manage_stundenplan">Katalog anzeigen</string>
     <string name="new_fach">Neues Fach anlegen</string>
     <string name="read">CSV einlesen</string>
     <string name="write_Backup">Daten im Backup sichern</string>
     <string name="read_Backup">Daten aus Backup laden</string>
-    <string name="Text_Test" />
     <string name="Backup">Datensicherung</string>
     <string name="button_input">Fach hinzufügen</string>
     <string name="Clear_all">Katalog zurücksetzen</string>
     <string name="Mainmenue">Hauptmenü</string>
     <string name="ProjectDescription">StundenplanApp@SWE.fh-bi.de</string>
-
 
     <string name="input_semester">Semester</string>
     <string name="input_name">Name</string>
@@ -23,7 +21,6 @@
     <string name="input_raum">Raum</string>
     <string name="input_dozent">Dozent</string>
     <string name="input_kuerzel">Kuerzel</string>
-
 
     <string name="Titel">Titel</string>
     <string name="Attribute">Attribute</string>
@@ -44,6 +41,4 @@
 
     <string name="dialogButtonOK">OK</string>
     <string name="dialogButtonCancel">Abbrechen</string>
-
-
 </resources>
