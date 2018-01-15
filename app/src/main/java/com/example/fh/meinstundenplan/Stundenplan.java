@@ -75,7 +75,7 @@ public class Stundenplan extends AppCompatActivity implements NavigationView.OnN
         InputStream is = getResources().openRawResource(R.raw.ini_ws17);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is, Charset.forName("ISO-8859-1")));
         String id = "";
-        String line = "";
+        String line;
         try {
             // Erste Zeile mit Überschrift ignorieren
             reader.readLine();

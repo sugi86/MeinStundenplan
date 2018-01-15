@@ -16,7 +16,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@mipmap/fh_logo" />
+        app:srcCompat="@mipmap/fh_logo"
+        android:contentDescription="@string/FH_Logo"
+        />
 
     <TextView
         android:layout_width="match_parent"
