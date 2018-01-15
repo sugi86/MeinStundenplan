@@ -1,11 +1,9 @@
 package com.example.fh.meinstundenplan;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,13 +78,14 @@ public class UsersAdapter extends ArrayAdapter<Fach> {
             }
         });
 
-        button_delete.setOnClickListener(new View.OnClickListener() {
+        button_delete.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public void onClick(View v) {
+            public boolean onLongClick(View v) {
                 list.remove(position);
                 notifyDataSetChanged();
                 Snackbar.make(v, "Fach erfolgreich aus dem Katalog gelöscht", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                return false;
             }
         });
 
